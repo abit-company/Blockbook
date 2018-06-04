@@ -1,12 +1,12 @@
 # Blockbook
 
 ## What is blockbook
-It’s an experiment. We want to condense the knowledge of the blockchain community to create the definitive, adaptive guide on Blockchain technology.
 
+It’s an experiment. We want to condense the knowledge of the blockchain community to create the definitive, adaptive guide on Blockchain technology.
 
 ## Project structure
 
-You can read the content easily through the book site (blockbook.cc). Master branch contains the source of the website. Dev branch contains the most recent version.
+You can read the content easily through the book site [blockbook](blockbook.cc). Master branch contains the source of the website. Dev branch contains the most recent version.
 
 ## Support
 
@@ -14,6 +14,7 @@ If you find an issue you can contact us through [GitHub Issue Tracker](https://g
 or send us a message on [Twitter](https://twitter.com/abitcompany)
 
 ## Dev
+
 Blockbook is developed using [Gatsby.js](https://www.gatsbyjs.org/). You should refer to their documentation.
 
 ### Contacts
