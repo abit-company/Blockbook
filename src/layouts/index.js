@@ -204,6 +204,28 @@ injectGlobal`
   ::-webkit-scrollbar {
     display: none;
   }
+
+  .algolia-autocomplete .ds-dropdown-menu {
+    @media (max-width: 600px) {
+      z-index: 100;
+      position: fixed!important;
+      top: 40px!important;
+      left: auto!important;
+      right: 1rem!important;
+      min-width: calc(100% - 2rem);
+      max-width: calc(100% - 2rem);
+      max-height: calc(100% - 5rem);
+      display: block;
+      ::before {
+        left: 50%;
+      }
+    }
+  }
+  .algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu {
+    right: 1rem !important;
+    left: inherit!important;
+  }
+
 `;
 
 const Main = styled.div`
