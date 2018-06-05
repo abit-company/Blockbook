@@ -151,7 +151,7 @@ const SideBarWrapper = styled.div`
     props.blockSideMenu &&
     css`
       position: absolute !important;
-      bottom: ${props => props.footerHeight};
+      bottom: ${props => props.footerHeight}px;
     `};
 `;
 
