@@ -64,7 +64,13 @@ class Layout extends React.Component {
     const firedBy = e.target.id;
     if (firedBy === 'side-menu') return;
     const newScrollPosition = window.scrollY;
-    if (newScrollPosition < this.lastScrollPosition) {
+    if (newScrollPosition <= 0) {
+      this.setState({
+        isShowNavBar: true,
+      });
+      return;
+    }
+    if (newScrollPosition <= this.lastScrollPosition) {
       if (!this.state.isShowNavBar) {
         this.setState({
           isShowNavBar: true,
@@ -98,7 +104,7 @@ class Layout extends React.Component {
       },
       true
     );
-    window.addEventListener('scroll', e => this.managePageScroll(e), true);
+    window.addEventListener('scroll', this.managePageScroll, true);
   }
   componentWillUnmount() {
     window.removeEventListener('resize', true);

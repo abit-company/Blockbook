@@ -9,7 +9,7 @@ import UiContext from './UiContext';
 export default ({ theme, changeTheme, isShowNavBar }) => (
   <UiContext.Consumer>
     {({ toggleSideBar, isBigScreen, isHome }) => (
-      <Header isHome={isHome} isShowNavBar={isShowNavBar}>
+      <Header isHome={isHome} isShowNavBar={isShowNavBar} id="header">
         <Nav>
           {!isBigScreen && !isHome ? (
             <NavLatButton

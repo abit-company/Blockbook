@@ -10,6 +10,23 @@ import {
 
 import logo from './abit-logo.png';
 
+const addresses = [
+  {
+    coin: 'btc',
+    coinName: 'Bitcoin',
+    address: '16tN9LvFUMQduaMs3MsB1GLLw6LS1QnFGa',
+  },
+  {
+    coin: 'eth',
+    coinName: 'Ethereum',
+    address: '0x32ddbd25ef7cb83a856794e7c16c175888859991',
+  },
+  {
+    coin: 'ltc',
+    coinName: 'Litecoin',
+    address: 'LWBZPAQmJW5HDFXMXKSFHRmmszk9sjZdDm',
+  },
+];
 const SocialIcon = ({ social }) => {
   const selectSocial = () => {
     switch (social) {
@@ -79,6 +96,26 @@ export default () => (
         </div>
       </Link>
     </MadeBy>
+    <Donations>
+      <span>If you want to support this book feel free to donate</span>
+      <DonationAddressesContainer>
+        {addresses.map(address => (
+          <DonationAddress key={address.coin}>
+            <img
+              src={`https://abitcompany-cdn.sirv.com/crypto_images/${
+                address.coin
+              }.png`}
+              width="18"
+              height="18"
+              alt="eth"
+              style={{ marginRight: '5px' }}
+            />
+            <CoinName>{`${address.coinName}:`}</CoinName>
+            {`${address.address}`}
+          </DonationAddress>
+        ))}
+      </DonationAddressesContainer>
+    </Donations>
     <CreativeCommons
       rel="license noopener noreferrer"
       href="https://creativecommons.org/licenses/by-nc/4.0"
@@ -92,6 +129,31 @@ export default () => (
   </Footer>
 );
 
+const CoinName = styled.span`
+  font-weight: 600;
+  @media only screen and (max-width: ${props => props.theme.breakMobile}) {
+    display: none;
+  }
+`;
+const DonationAddress = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 10px;
+`;
+const DonationAddressesContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+const Donations = styled.div`
+  margin: 10px;
+  font-size: 0.8rem;
+  text-align: center;
+`;
 const CreativeCommons = styled.a`
   margin: 15px;
 `;
@@ -137,7 +199,7 @@ const SocialIconWrapper = styled.div`
 `;
 const Footer = styled.footer`
   letter-spacing: 1.5px;
-  height: ${props => props.theme.footerHeight};
+  min-height: ${props => props.theme.footerHeight};
   background-color: ${props => props.theme.backgroundColor};
   border-top: 1px solid ${props => props.theme.lineColor};
   z-index: 100;

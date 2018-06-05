@@ -60,7 +60,7 @@ export default class Highlightable extends React.Component {
   }
   computePopUpBox = () => {
     const selection = window.getSelection();
-    console.log(selection);
+    // console.log(selection);
     if (!checkIfTextSelected()) {
       this.clearSelection();
       return;

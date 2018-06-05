@@ -42,11 +42,15 @@ export default class PageLayout extends React.Component {
   state = {
     blockSideMenu: false,
   };
+
+  footerHeight = 0;
+
   manageSideBarScroll = e => {
     const footer = document.getElementById('footer');
     const sideMenu = document.getElementById('side-menu');
     const rectFooter = footer.getBoundingClientRect();
     const rectSideMenu = sideMenu.getBoundingClientRect();
+    this.footerHeight = rectFooter.height;
     if (
       rectFooter.top <= rectSideMenu.height &&
       this.state.blockSideMenu == false
@@ -58,7 +62,6 @@ export default class PageLayout extends React.Component {
       rectFooter.top >= rectSideMenu.height &&
       this.state.blockSideMenu == true
     ) {
-      console.log('unblock side bar');
       this.setState({
         blockSideMenu: false,
       });
@@ -80,6 +83,7 @@ export default class PageLayout extends React.Component {
               isSideBarOpen={isSideBarOpen}
               isBigScreen={isBigScreen}
               id="side-menu"
+              footerHeight={this.footerHeight}
               blockSideMenu={this.state.blockSideMenu}
             >
               <SideBar />
@@ -147,7 +151,7 @@ const SideBarWrapper = styled.div`
     props.blockSideMenu &&
     css`
       position: absolute !important;
-      bottom: ${props => props.theme.footerHeight};
+      bottom: ${props => props.footerHeight};
     `};
 `;
 
