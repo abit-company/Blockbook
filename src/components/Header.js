@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+
 import SearchBar from './SearchBar';
 import { Link, IconNight, IconDay, IconSideBar, IconGithub } from './UI';
 

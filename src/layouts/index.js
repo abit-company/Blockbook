@@ -5,7 +5,6 @@ import styled, { ThemeProvider, injectGlobal } from 'styled-components';
 import { Header, Footer } from '../components';
 import { lightTheme, darkTheme } from '../styles';
 import UiContext from '../components/UiContext';
-import { InstantSearch } from 'react-instantsearch/dom';
 
 // const clearSelection = () => {
 //   if (window.getSelection) {
@@ -79,6 +78,17 @@ class Layout extends React.Component {
     this.lastScrollPosition = newScrollPosition;
   };
   componentDidMount() {
+    try {
+      docsearch({
+        apiKey: 'c69eb7c785de370820ad099a5f64a3fa',
+        indexName: 'blockbook',
+        inputSelector: '#search-box',
+        debug: false, // Set debug to true if you want to inspect the dropdown
+      });
+    } catch (e) {
+      console.log(e.message);
+    }
+
     window.addEventListener(
       'resize',
       () => {
