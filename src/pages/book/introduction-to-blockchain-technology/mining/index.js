@@ -396,7 +396,7 @@ export default () => (
               <Td>Chosen in advance based on the stake</Td>
             </Tr>
             <Tr>
-              <Td>is Fair?</Td>
+              <Td>fair?</Td>
               <Td>yes</Td>
               <Td>yes</Td>
             </Tr>

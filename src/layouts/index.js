@@ -111,6 +111,26 @@ class Layout extends React.Component {
     window.removeEventListener('scroll', this.managePageScroll, true);
   }
 
+  // side swipe
+  onTouchStart = e => {
+    this.touchStart = {
+      x: e.changedTouches[0].clientX,
+      y: e.changedTouches[0].clientY,
+    };
+  };
+  onTouchEnd = e => {
+    const dx = e.changedTouches[0].clientX - this.touchStart.x;
+    const dy = e.changedTouches[0].clientY - this.touchStart.y;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      if (dx > 0 && this.touchStart.x <= 80) {
+        this.UiActions.toggleSideBar();
+      } else {
+        // this.toggleSidebar(false);
+        console.log('side bar close');
+      }
+    }
+  };
+
   render() {
     const currentPath = this.props.location.pathname;
     const isHome = currentPath === '/';
@@ -174,7 +194,9 @@ class Layout extends React.Component {
               changeTheme={this.UiActions.changeTheme}
               isShowNavBar={this.state.isShowNavBar}
             />
-            <Main>{this.props.children()}</Main>
+            <Main onTouchStart={this.onTouchStart} onTouchEnd={this.onTouchEnd}>
+              {this.props.children()}
+            </Main>
             <Footer />
           </AppContainer>
         </ThemeProvider>

@@ -73,6 +73,7 @@ export default class PageLayout extends React.Component {
   componentWillUnmount() {
     window.removeEventListener('scroll', this.manageSideBarScroll, true);
   }
+
   render() {
     return (
       <UiContext.Consumer>
@@ -112,7 +113,7 @@ const OverlaySideBar = styled.div`
   min-height: 100vh;
   background-color: ${props => props.theme.baseTextColor};
   opacity: 0.2;
-  z-index: 20;
+  z-index: 100;
 `;
 const SideBarWrapper = styled.div`
   border-right: 1px solid ${props => props.theme.lineColor};
