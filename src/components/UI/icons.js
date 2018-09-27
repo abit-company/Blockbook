@@ -71,8 +71,8 @@ const IconEdit = () => (
   </HighlighIcon>
 );
 
-const IconFacebook = ({ className }) => (
-  <svg viewBox="0 0 50 50" className={className}>
+const IconFacebook = () => (
+  <svg viewBox="0 0 50 50">
     <path
       d="M29.1,21.9h-2.8V20c0-0.7,0.5-0.9,0.8-0.9s2,0,2,0V16h-2.7c-3,0-3.7,2.3-3.7,3.7v2h-1.8V25h1.8
   		c0,4,0,8.9,0,8.9h3.7c0,0,0-4.9,0-8.9h2.5L29.1,21.9z"
@@ -80,8 +80,8 @@ const IconFacebook = ({ className }) => (
   </svg>
 );
 
-const IconTwitter = ({ className }) => (
-  <svg viewBox="0 0 50 50" className={className}>
+const IconTwitter = () => (
+  <svg viewBox="0 0 50 50">
     <path
       d="M33.5,18.9c-0.7,0.3-1.4,0.5-2.1,0.6c0.8-0.5,1.3-1.3,1.6-2.2c-0.7,0.5-1.5,0.8-2.3,1
 				C30.1,17.5,29.1,17,28,17c-2,0-3.7,1.8-3.7,4c0,0.3,0,0.6,0.1,0.9c-3-0.2-5.8-1.7-7.6-4.1c-0.3,0.6-0.5,1.3-0.5,2
@@ -92,8 +92,8 @@ const IconTwitter = ({ className }) => (
   </svg>
 );
 
-const IconLinkedin = ({ className }) => (
-  <svg viewBox="0 0 50 50" className={className}>
+const IconLinkedin = () => (
+  <svg viewBox="0 0 50 50">
     <path
       d="M33.4,33.5h-3.6v-5.6c0-1.3,0-3-1.9-3c-1.9,0-2.1,1.4-2.1,2.9v5.7h-3.6V22h3.4v1.6h0c0.5-0.9,1.6-1.9,3.4-1.9
       	c3.6,0,4.3,2.4,4.3,5.5L33.4,33.5L33.4,33.5z M18.3,20.4c-1.1,0-2.1-0.9-2.1-2.1c0-1.1,0.9-2.1,2.1-2.1c1.1,0,2.1,0.9,2.1,2.1
@@ -103,8 +103,8 @@ const IconLinkedin = ({ className }) => (
   </svg>
 );
 
-const IconMedium = ({ className }) => (
-  <svg viewBox="0 0 50 50" className={className}>
+const IconMedium = () => (
+  <svg viewBox="0 0 50 50">
     <path
       d="M16.9,20c0-0.3-0.1-0.5-0.3-0.7l-2-2.4v-0.4h6.2L25.6,27l4.2-10.5h5.9v0.4L34,18.5c-0.1,0.1-0.2,0.3-0.2,0.5v12
       	c0,0.2,0,0.4,0.2,0.5l1.7,1.6v0.4h-8.4v-0.4l1.7-1.7c0.2-0.2,0.2-0.2,0.2-0.5v-9.7l-4.8,12.2h-0.6l-5.6-12.2v8.2

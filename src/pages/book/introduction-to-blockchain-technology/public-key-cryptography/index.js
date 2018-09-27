@@ -85,6 +85,13 @@ export default () => (
         signatures. Digital signatures are created with a combination of hashing
         and public-key encryption.
       </Paragraph>
+      <Paragraph>
+        <Italic>Sign (Message, private key) = Digital Signature</Italic>
+        <br />
+        <Italic>
+          Verify (Message, Public key, Digital signature) = True/false
+        </Italic>
+      </Paragraph>
       <Paragraph>With a digital signature we can accomplish:</Paragraph>
       <ul>
         <li>

@@ -164,16 +164,10 @@ const HeroMessageContainer = styled.div`
   @media only screen and (max-width: 900px) {
     margin-left: 0;
   }
-  /* @media only screen and (max-width: ${props => props.theme.maxHeroImg}) {
-    margin-bottom: 250px;
-  } */
+
   @media only screen and (max-width: ${props => props.theme.breakMobile}) {
     text-align: center;
   }
-  /* @media only screen and (max-width: ${props =>
-    props.theme.breakVerySmall}) {
-    margin-bottom: 300px;
-  } */
 `;
 const HeroMessage = styled.div`
   background-color: #fff;

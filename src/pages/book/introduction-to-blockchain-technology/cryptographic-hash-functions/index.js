@@ -66,10 +66,14 @@ export default () => (
                   </Td>
                 </Tr>
                 <Tr>
-                  <Td>hello</Td>
+                  <Td>
+                    <span style={{ textTransform: 'lowercase' }}>hello</span>
+                  </Td>
                   <Td>SHA256</Td>
                   <Td>
-                    2CF24DBA5FB0A30E26E83B2AC5B9E29E1B161E5C1FA7425E73043362938B9824
+                    <span>
+                      2CF24DBA5FB0A30E26E83B2AC5B9E29E1B161E5C1FA7425E73043362938B9824
+                    </span>
                   </Td>
                 </Tr>
               </tbody>

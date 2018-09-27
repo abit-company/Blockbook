@@ -36,7 +36,7 @@ export default () => (
             transactions. In this case a blockchain splits into two separate
             chains temporarily (<Bold>regular fork</Bold>) or permanently (<Bold
             >
-              hard fork
+              hard fork with chain split
             </Bold>).
           </li>
           <li>

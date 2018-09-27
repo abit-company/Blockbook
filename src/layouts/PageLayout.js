@@ -20,7 +20,6 @@ const EditOnGithub = ({ currentPath }) => (
     }}
   >
     <Link
-      external
       to={`${
         process.env.GITHUB_URL
       }/tree/master/src/pages${currentPath}/index.js`}
@@ -35,8 +34,6 @@ const EditOnGithub = ({ currentPath }) => (
     </Link>
   </div>
 );
-
-const checkOffset = () => {};
 
 export default class PageLayout extends React.Component {
   state = {

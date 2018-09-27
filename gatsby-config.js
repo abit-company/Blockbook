@@ -6,12 +6,26 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-react-next',
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-plugin-root-import',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        root: path.join(__dirname, 'src'),
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        test: /\.js$|\.jsx$/,
+        exclude: /(node_modules|cache|public)/,
+        options: {
+          emitWarning: true,
+          failOnError: false,
+        },
       },
     },
     {
@@ -24,21 +38,15 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        logo: './src/favicon.png',
-        injectHTML: true,
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          twitter: false,
-          yandex: false,
-          windows: false,
-        },
+        name: 'abitnews',
+        short_name: 'abitnews',
+        start_url: '/',
+        background_color: '#05c3b6',
+        theme_color: '#05c3b6',
+        display: 'minimal-ui',
+        icon: './static/abitnews.png', // This path is relative to the root of the site.
       },
     },
     {
@@ -53,5 +61,6 @@ module.exports = {
         respectDNT: true,
       },
     },
+    `gatsby-plugin-offline`,
   ],
 };

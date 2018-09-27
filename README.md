@@ -6,7 +6,7 @@ It’s an experiment. We want to condense the knowledge of the blockchain commun
 
 ## Project structure
 
-You can read the content easily through the book site [blockbook](blockbook.cc). Master branch contains the source of the website. Dev branch contains the most recent version.
+You can read the content easily through the book site [blockbook](https://www.blockbook.cc). Master branch contains the source of the website. Dev branch contains the most recent version.
 
 ## Support
 
