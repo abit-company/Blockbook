@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from './UI';
+import Link from './Link';
 import { toc } from '../tableOfContents';
 import UiContext from './UiContext';
 

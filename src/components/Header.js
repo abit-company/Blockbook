@@ -6,10 +6,10 @@ import { Link, IconNight, IconDay, IconSideBar, IconGithub } from './UI';
 
 import UiContext from './UiContext';
 
-export default ({ theme, changeTheme, isShowNavBar }) => (
+const Header = ({ theme, changeTheme, isShowNavBar }) => (
   <UiContext.Consumer>
     {({ toggleSideBar, isBigScreen, isHome }) => (
-      <Header isHome={isHome} isShowNavBar={isShowNavBar} id="header">
+      <HeaderContainer isHome={isHome} isShowNavBar={isShowNavBar} id="header">
         <Nav>
           {!isBigScreen && !isHome ? (
             <NavLatButton
@@ -48,7 +48,7 @@ export default ({ theme, changeTheme, isShowNavBar }) => (
             </Link>
           </LeftLinks>
         </Nav>
-      </Header>
+      </HeaderContainer>
     )}
   </UiContext.Consumer>
 );
@@ -95,7 +95,7 @@ const Nav = styled.nav`
   flex-direction: row;
   align-items: center;
 `;
-const Header = styled.header`
+const HeaderContainer = styled.header`
   width: 100%;
   top: 0;
   z-index: 100;
@@ -115,3 +115,5 @@ const Header = styled.header`
       position: fixed;
     `};
 `;
+
+export default Header;

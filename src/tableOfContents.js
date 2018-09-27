@@ -137,15 +137,16 @@ const toc = baseToc.map(el => {
   return {
     title: el.title,
     url: el.url,
-    childNodes: el.childNodes.map(e => {
-      return { title: e.title, url: `${el.url}/${e.url}` };
-    }),
+    childNodes: el.childNodes.map(e => ({
+      title: e.title,
+      url: `${el.url}/${e.url}`,
+    })),
   };
 });
 
-const temp = toc.map(el => {
-  return [{ title: el.title, url: el.url }].concat(el.childNodes);
-});
+const temp = toc.map(el =>
+  [{ title: el.title, url: el.url }].concat(el.childNodes)
+);
 
 const flattenToc = [].concat(...temp);
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
 import styled, { ThemeProvider, injectGlobal } from 'styled-components';
 import { Header, Footer } from '../components';
 import { lightTheme, darkTheme } from '../styles';
+console.log(lightTheme);
 import UiContext from '../components/UiContext';
+import { Location } from '@reach/router';
 
 // const clearSelection = () => {
 //   if (window.getSelection) {
@@ -14,7 +15,7 @@ import UiContext from '../components/UiContext';
 //   }
 // };
 
-class Layout extends React.Component {
+export default class BaseLayout extends React.Component {
   constructor(props) {
     super(props);
 
@@ -84,15 +85,18 @@ class Layout extends React.Component {
     this.lastScrollPosition = newScrollPosition;
   };
   componentDidMount() {
-    try {
-      docsearch({
-        apiKey: 'c69eb7c785de370820ad099a5f64a3fa',
-        indexName: 'blockbook',
-        inputSelector: '#search-box',
-        debug: false, // Set debug to true if you want to inspect the dropdown
-      });
-    } catch (e) {
-      console.log(e.message);
+    console.log(process);
+    if (process.env.NODE_ENV === 'production') {
+      try {
+        window.docsearch({
+          apiKey: 'c69eb7c785de370820ad099a5f64a3fa',
+          indexName: 'blockbook',
+          inputSelector: '#search-box',
+          debug: false, // Set debug to true if you want to inspect the dropdown
+        });
+      } catch (e) {
+        console.log(e.message);
+      }
     }
 
     window.addEventListener(
@@ -107,8 +111,8 @@ class Layout extends React.Component {
     window.addEventListener('scroll', this.managePageScroll, true);
   }
   componentWillUnmount() {
-    window.removeEventListener('resize', true);
-    window.removeEventListener('scroll', this.managePageScroll, true);
+    // window.removeEventListener('resize', true);
+    // window.removeEventListener('scroll', this.managePageScroll, true);
   }
 
   // side swipe
@@ -132,14 +136,17 @@ class Layout extends React.Component {
   };
 
   render() {
-    const currentPath = this.props.location.pathname;
+    // const currentPath = this.props.location.pathname;
+    const currentPath = '/';
     const isHome = currentPath === '/';
+
     let theme;
     if (isHome) {
       theme = lightTheme;
     } else {
       theme = this.state.theme === 'light' ? lightTheme : darkTheme;
     }
+    console.log(theme);
     const Paths = {
       currentPath,
       isHome,
@@ -152,51 +159,14 @@ class Layout extends React.Component {
       >
         <ThemeProvider theme={theme}>
           <AppContainer onClick={this.UiActions.closeSideBar} isHome={isHome}>
-            <Helmet>
-              <meta charSet="utf-8" />
-              <title>Blockbook</title>
-              <meta
-                name="description"
-                content="Introduction to Blockchain technology"
-              />
-              <meta
-                name="keywords"
-                content="blockchain,bitcoin,book,technology,cryptocurrency"
-              />
-              <meta property="og:url" content="https://blockbook.cc/" />
-              <meta property="og:site_name" content="Blockbook" />
-              <meta property="og:title" content="Blockbook" />
-              <meta
-                property="og:description"
-                content="Introduction to Blockchain technology"
-              />
-              <meta property="og:type" content="website" />
-              <meta
-                property="og:image"
-                content="https://blockbook.cc/abitcompany_logo.png"
-              />
-
-              <meta name="twitter:card" content="summary" />
-              <meta name="twitter:site" content="@abitcompany" />
-              <meta name="twitter:creator" content="@abitcompany" />
-              <meta name="twitter:title" content="abitcompany" />
-              <meta
-                name="twitter:description"
-                content="Introduction to Blockchain technology"
-              />
-              <meta
-                name="twitter:image"
-                content="https://blockbook.cc/abitcompany_logo.png"
-              />
-            </Helmet>
-            <Header
+            {/* <Header
               theme={this.state.theme}
               changeTheme={this.UiActions.changeTheme}
               isShowNavBar={this.state.isShowNavBar}
-            />
-            <Main onTouchStart={this.onTouchStart} onTouchEnd={this.onTouchEnd}>
-              {this.props.children()}
-            </Main>
+            /> */}
+            {/* <Main onTouchStart={this.onTouchStart} onTouchEnd={this.onTouchEnd}>
+              {this.props.children}
+            </Main> */}
             <Footer />
           </AppContainer>
         </ThemeProvider>
@@ -259,5 +229,3 @@ injectGlobal`
 const Main = styled.div`
   min-height: 100vh;
 `;
-
-export default Layout;

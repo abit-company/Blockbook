@@ -23,7 +23,7 @@ const darkTheme = {
   lightColor: '#eee',
 };
 
-export default {
-  lightColors: Object.assign({}, baseColor, lightTheme),
-  darkColors: Object.assign({}, baseColor, darkTheme),
-};
+const lightColors = { ...baseColor, ...lightTheme };
+const darkColors = { ...baseColor, ...darkTheme };
+
+export { lightColors, darkColors };

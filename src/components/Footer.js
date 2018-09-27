@@ -1,14 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import {
-  Link,
-  IconFacebook,
-  IconTwitter,
-  IconLinkedin,
-  IconMedium,
-} from './UI';
-
-import logo from './abit-logo.png';
+import { IconFacebook, IconTwitter, IconLinkedin, IconMedium } from './UI';
+import Link from './Link';
+import logo from '../images/abitcompany-logo.png';
 
 const addresses = [
   {
@@ -69,8 +63,8 @@ const SocialIcon = ({ social }) => {
   return <div>{selectSocial()}</div>;
 };
 
-export default () => (
-  <Footer id="footer">
+const Footer = () => (
+  <FooterContainer id="footer">
     <LinksContainer>
       <SocialIcon social="facebook" />
       <SocialIcon social="twitter" />
@@ -126,7 +120,7 @@ export default () => (
         src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"
       />
     </CreativeCommons>
-  </Footer>
+  </FooterContainer>
 );
 
 const CoinName = styled.span`
@@ -197,7 +191,7 @@ const SocialIconWrapper = styled.div`
     }
   }
 `;
-const Footer = styled.footer`
+const FooterContainer = styled.footer`
   letter-spacing: 1.5px;
   min-height: ${props => props.theme.footerHeight};
   background-color: ${props => props.theme.backgroundColor};
@@ -224,3 +218,5 @@ const MadeBy = styled.div`
   align-items: center;
   padding-top: 20px;
 `;
+
+export default Footer;

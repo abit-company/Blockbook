@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { flattenToc } from '../tableOfContents';
-import { Link } from './UI';
+import Link from './Link';
 import UIContext from './UiContext';
 
 const prevLink = currentPath => {
