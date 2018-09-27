@@ -14,7 +14,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`),
+        path: path.join(__dirname, `src`, `images`, `book`),
       },
     },
     {
@@ -46,7 +46,7 @@ module.exports = {
         background_color: '#05c3b6',
         theme_color: '#05c3b6',
         display: 'minimal-ui',
-        icon: './static/abitcompany-logo.png', // This path is relative to the root of the site.
+        icon: './src/images/blockbook-logo.png', // This path is relative to the root of the site.
       },
     },
     {

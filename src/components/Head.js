@@ -21,7 +21,7 @@ const Head = () => (
     <meta property="og:type" content="website" />
     <meta
       property="og:image"
-      content="https://blockbook.cc/abitcompany-logo.png"
+      content="https://blockbook.cc/blockbook-logo-square.png"
     />
 
     <meta name="twitter:card" content="summary" />
@@ -34,7 +34,7 @@ const Head = () => (
     />
     <meta
       name="twitter:image"
-      content="https://blockbook.cc/abitcompany_logo.png"
+      content="https://blockbook.cc/blockbook-logo-square.png"
     />
   </Helmet>
 );
