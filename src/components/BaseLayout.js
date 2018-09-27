@@ -61,7 +61,7 @@ export default class BaseLayout extends React.Component {
   }
 
   managePageScroll = e => {
-    if (this.props.location.pathname === '/') return;
+    if (window.location.href === '/') return;
     const firedBy = e.target.id;
     if (firedBy === 'side-menu') return;
     const newScrollPosition = window.scrollY;
@@ -111,8 +111,8 @@ export default class BaseLayout extends React.Component {
     window.addEventListener('scroll', this.managePageScroll, true);
   }
   componentWillUnmount() {
-    // window.removeEventListener('resize', true);
-    // window.removeEventListener('scroll', this.managePageScroll, true);
+    window.removeEventListener('resize', true);
+    window.removeEventListener('scroll', this.managePageScroll, true);
   }
 
   // side swipe
@@ -164,9 +164,9 @@ export default class BaseLayout extends React.Component {
               changeTheme={this.UiActions.changeTheme}
               isShowNavBar={this.state.isShowNavBar}
             />
-            {/* <Main onTouchStart={this.onTouchStart} onTouchEnd={this.onTouchEnd}>
+            <Main onTouchStart={this.onTouchStart} onTouchEnd={this.onTouchEnd}>
               {this.props.children}
-            </Main> */}
+            </Main>
             <Footer />
           </AppContainer>
         </ThemeProvider>
