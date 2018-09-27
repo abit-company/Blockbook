@@ -7,8 +7,8 @@ import {
   Link,
   IconGithub,
 } from '../components';
-
 import UiContext from '../components/UiContext';
+import BaseLayout from '../components/BaseLayout';
 
 const EditOnGithub = ({ currentPath }) => (
   <div
@@ -35,14 +35,14 @@ const EditOnGithub = ({ currentPath }) => (
   </div>
 );
 
-export default class PageLayout extends React.Component {
+export default class PageTemplate extends React.Component {
   state = {
     blockSideMenu: false,
   };
 
   footerHeight = 0;
 
-  manageSideBarScroll = e => {
+  manageSideBarScroll = () => {
     const footer = document.getElementById('footer');
     const sideMenu = document.getElementById('side-menu');
     const rectFooter = footer.getBoundingClientRect();
@@ -73,31 +73,38 @@ export default class PageLayout extends React.Component {
 
   render() {
     return (
-      <UiContext.Consumer>
-        {({ isSideBarOpen, isBigScreen, currentPath, updateLastLocation }) => (
-          <Page>
-            {updateLastLocation(currentPath)}
-            <SideBarWrapper
-              isSideBarOpen={isSideBarOpen}
-              isBigScreen={isBigScreen}
-              id="side-menu"
-              footerHeight={this.footerHeight}
-              blockSideMenu={this.state.blockSideMenu}
-            >
-              <SideBar />
-            </SideBarWrapper>
+      <BaseLayout>
+        <UiContext.Consumer>
+          {({
+            isSideBarOpen,
+            isBigScreen,
+            currentPath,
+            updateLastLocation,
+          }) => (
+            <Page>
+              {updateLastLocation(currentPath)}
+              <SideBarWrapper
+                isSideBarOpen={isSideBarOpen}
+                isBigScreen={isBigScreen}
+                id="side-menu"
+                footerHeight={this.footerHeight}
+                blockSideMenu={this.state.blockSideMenu}
+              >
+                <SideBar />
+              </SideBarWrapper>
 
-            <ContentWrapper>
-              <Content>
-                {isSideBarOpen ? <OverlaySideBar /> : null}
-                {this.props.children}
-                <EditOnGithub currentPath={currentPath} />
-                <PageNavigationFooter />
-              </Content>
-            </ContentWrapper>
-          </Page>
-        )}
-      </UiContext.Consumer>
+              <ContentWrapper>
+                <Content>
+                  {isSideBarOpen ? <OverlaySideBar /> : null}
+                  {this.props.children}
+                  <EditOnGithub currentPath={currentPath} />
+                  <PageNavigationFooter />
+                </Content>
+              </ContentWrapper>
+            </Page>
+          )}
+        </UiContext.Consumer>
+      </BaseLayout>
     );
   }
 }

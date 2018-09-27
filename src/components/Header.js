@@ -3,11 +3,11 @@ import styled, { css } from 'styled-components';
 import SearchBar from './SearchBar';
 import { IconNight, IconDay, IconSideBar, IconGithub } from './UI';
 import Link from './Link';
-import UiContext from './UiContext';
+import UIContext from './UiContext';
 
-const Header = ({ theme, changeTheme, isShowNavBar }) => (
-  <UiContext.Consumer>
-    {({ toggleSideBar, isBigScreen, isHome }) => (
+export const Header = ({ theme, changeTheme, isShowNavBar, isHome }) => (
+  <UIContext.Consumer>
+    {({ toggleSideBar, isBigScreen }) => (
       <HeaderContainer isHome={isHome} isShowNavBar={isShowNavBar} id="header">
         <Nav>
           {!isBigScreen && !isHome ? (
@@ -27,17 +27,15 @@ const Header = ({ theme, changeTheme, isShowNavBar }) => (
           ) : null}
           <LeftLinks>
             {!isHome ? (
-              <div>
-                {theme === 'light' ? (
-                  <NavIconWrapper>
+              <>
+                <NavIconWrapper>
+                  {theme === 'light' ? (
                     <IconNight click={changeTheme} />
-                  </NavIconWrapper>
-                ) : (
-                  <NavIconWrapper>
+                  ) : (
                     <IconDay click={changeTheme} />
-                  </NavIconWrapper>
-                )}
-              </div>
+                  )}
+                </NavIconWrapper>
+              </>
             ) : null}
             <SearchBar />
             <Link to={process.env.GITHUB_URL}>
@@ -49,7 +47,7 @@ const Header = ({ theme, changeTheme, isShowNavBar }) => (
         </Nav>
       </HeaderContainer>
     )}
-  </UiContext.Consumer>
+  </UIContext.Consumer>
 );
 
 const NavLatButton = styled.div`

@@ -104,7 +104,7 @@ const Footer = () => (
               alt="eth"
               style={{ marginRight: '5px' }}
             />
-            <CoinName>{`${address.coinName}:`}</CoinName>
+            {/* <CoinName>{`${address.coinName}:`}</CoinName> */}
             {`${address.address}`}
           </DonationAddress>
         ))}
