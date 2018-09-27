@@ -46,7 +46,7 @@ module.exports = {
         background_color: '#05c3b6',
         theme_color: '#05c3b6',
         display: 'minimal-ui',
-        icon: './static/abitnews.png', // This path is relative to the root of the site.
+        icon: './static/abitcompany-logo.png', // This path is relative to the root of the site.
       },
     },
     {

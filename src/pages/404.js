@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'components';
+// import { Link } from 'components';
 
 export default () => (
   <NotFoundPage>
     <NotFound>NOT FOUND</NotFound>
-    <Link to="/">Home</Link>
+    {/* <Link to="/">Home</Link> */}
   </NotFoundPage>
 );
 
