@@ -159,11 +159,11 @@ export default class BaseLayout extends React.Component {
       >
         <ThemeProvider theme={theme}>
           <AppContainer onClick={this.UiActions.closeSideBar} isHome={isHome}>
-            {/* <Header
+            <Header
               theme={this.state.theme}
               changeTheme={this.UiActions.changeTheme}
               isShowNavBar={this.state.isShowNavBar}
-            /> */}
+            />
             {/* <Main onTouchStart={this.onTouchStart} onTouchEnd={this.onTouchEnd}>
               {this.props.children}
             </Main> */}

@@ -1,9 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-
 import SearchBar from './SearchBar';
-import { Link, IconNight, IconDay, IconSideBar, IconGithub } from './UI';
-
+import { IconNight, IconDay, IconSideBar, IconGithub } from './UI';
+import Link from './Link';
 import UiContext from './UiContext';
 
 const Header = ({ theme, changeTheme, isShowNavBar }) => (
