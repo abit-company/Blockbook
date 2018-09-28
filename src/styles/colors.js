@@ -1,9 +1,9 @@
 const baseColor = {
   grey: '#eee',
-  mainColor: '#4353ff',
+  mainColor: '#7682ff',
   mainDark: '#2c3e50',
   lineColor: '#eee',
-  importantColor: '#4353ff',
+  importantColor: '#7682ff',
   alwaysDark: '#2c3e50',
   citColor: '#ffc400',
 };

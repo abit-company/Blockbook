@@ -1,9 +1,7 @@
 import React from 'react';
 import { Paragraph, Page, ChapterTitle, SubChapterTitle } from 'components';
-import PageTemplate from 'templates/PageTemplate';
 
 const Examples = () => (
-  <PageTemplate>
     <Page>
       <ChapterTitle>Examples</ChapterTitle>
       <Paragraph>
@@ -48,7 +46,6 @@ const Examples = () => (
         additional actions by the users.
       </Paragraph>
     </Page>
-  </PageTemplate>
 );
 
 export default Examples;

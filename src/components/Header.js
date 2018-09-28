@@ -3,51 +3,53 @@ import styled, { css } from 'styled-components';
 import SearchBar from './SearchBar';
 import { IconNight, IconDay, IconSideBar, IconGithub } from './UI';
 import Link from './Link';
-import UIContext from './UiContext';
 
-export const Header = ({ theme, changeTheme, isShowNavBar, isHome }) => (
-  <UIContext.Consumer>
-    {({ toggleSideBar, isBigScreen }) => (
-      <HeaderContainer isHome={isHome} isShowNavBar={isShowNavBar} id="header">
-        <Nav>
-          {!isBigScreen && !isHome ? (
-            <NavLatButton
-              onClick={e => {
-                e.stopPropagation();
-                toggleSideBar();
-              }}
-            >
-              <IconSideBar />
-            </NavLatButton>
-          ) : null}
-          {!isHome ? (
-            <Link to="/">
-              <NavTitle>Home</NavTitle>
-            </Link>
-          ) : null}
-          <LeftLinks>
-            {!isHome ? (
-              <>
-                <NavIconWrapper>
-                  {theme === 'light' ? (
-                    <IconNight click={changeTheme} />
-                  ) : (
-                    <IconDay click={changeTheme} />
-                  )}
-                </NavIconWrapper>
-              </>
-            ) : null}
-            <SearchBar />
-            <Link to={process.env.GITHUB_URL}>
-              <NavIconWrapperGitHub>
-                <IconGithub />
-              </NavIconWrapperGitHub>
-            </Link>
-          </LeftLinks>
-        </Nav>
-      </HeaderContainer>
-    )}
-  </UIContext.Consumer>
+export const Header = ({
+  theme,
+  changeTheme,
+  isShowNavBar,
+  isHome,
+  toggleSideBar,
+  isBigScreen,
+}) => (
+  <HeaderContainer isHome={isHome} isShowNavBar={isShowNavBar} id="header">
+    <Nav>
+      {!isBigScreen && !isHome ? (
+        <NavLatButton
+          onClick={e => {
+            e.stopPropagation();
+            toggleSideBar();
+          }}
+        >
+          <IconSideBar />
+        </NavLatButton>
+      ) : null}
+      {!isHome ? (
+        <Link to="/">
+          <NavTitle>Home</NavTitle>
+        </Link>
+      ) : null}
+      <LeftLinks>
+        {/* {!isHome ? (
+          <>
+            <NavIconWrapper>
+              {theme === 'light' ? (
+                <IconNight click={changeTheme} />
+              ) : (
+                <IconDay click={changeTheme} />
+              )}
+            </NavIconWrapper>
+          </>
+        ) : null} */}
+        <SearchBar />
+        <Link to={process.env.GITHUB_URL}>
+          <NavIconWrapperGitHub>
+            <IconGithub />
+          </NavIconWrapperGitHub>
+        </Link>
+      </LeftLinks>
+    </Nav>
+  </HeaderContainer>
 );
 
 const NavLatButton = styled.div`

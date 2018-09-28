@@ -13,8 +13,6 @@ import {
   TableWrapper,
   Address,
 } from 'components';
-import styled from 'styled-components';
-import PageTemplate from 'templates/PageTemplate';
 // import blockchainHash from './blockchain-hash.png';
 // import blockchainTampered from './blockchain-tampered-hash.png';
 // import compareHashes from './compare-hashes.png';

@@ -8,11 +8,9 @@ import {
   Italic,
   Bold,
 } from 'components';
-import PageTemplate from 'templates/PageTemplate';
 // import ifttt from './ifttt.png';
 
 const SmartContracts = () => (
-  <PageTemplate>
     <Page>
       <ChapterTitle>Smart contracts - introduction</ChapterTitle>
       <Paragraph>
@@ -61,7 +59,6 @@ const SmartContracts = () => (
       </Important>
       {/* <ImageWrapper label="If this then that">{ifttt}</ImageWrapper> */}
     </Page>
-  </PageTemplate>
 );
 
 export default SmartContracts;

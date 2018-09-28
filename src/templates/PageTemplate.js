@@ -74,7 +74,7 @@ export default class PageTemplate extends React.Component {
   render() {
     return (
       <UiContext.Consumer>
-        {({ isSideBarOpen, isBigScreen, currentPath }) => (
+        {({ isSideBarOpen, isBigScreen }) => (
           <Page>
             <SideBarWrapper
               isSideBarOpen={isSideBarOpen}
@@ -90,8 +90,10 @@ export default class PageTemplate extends React.Component {
               <Content>
                 {isSideBarOpen ? <OverlaySideBar /> : null}
                 {this.props.children}
-                <EditOnGithub currentPath={currentPath} />
-                <PageNavigationFooter currentPath={currentPath} />
+                <EditOnGithub currentPath={this.props.location.pathname} />
+                <PageNavigationFooter
+                  currentPath={this.props.location.pathname}
+                />
               </Content>
             </ContentWrapper>
           </Page>

@@ -9,13 +9,11 @@ import {
   Italic,
   Bold,
 } from 'components';
-import PageTemplate from 'templates/PageTemplate';
 // import stateTransition from './state-transition.png';
 // import transaction from './transaction.png';
 // import confirmations from './confirmations.png';
 
 const Transactions = () => (
-  <PageTemplate>
     <Page>
       <ChapterTitle>Transactions</ChapterTitle>
       <Paragraph>
@@ -154,7 +152,6 @@ const Transactions = () => (
         used to reward the miners.
       </Paragraph>
     </Page>
-  </PageTemplate>
 );
 
 export default Transactions;

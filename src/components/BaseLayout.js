@@ -5,21 +5,20 @@ import { Header, Footer } from '../components';
 import UiContext from './UiContext';
 import { lightTheme, darkTheme } from '../styles';
 import { Location } from '@reach/router';
+import Head from './Head';
 
 export default class BaseLayout extends React.Component {
   constructor(props) {
     super(props);
 
-    this.lastLocation = '';
     this.lastScrollPosition = 100000;
-
-    let theme = 'light';
     let isBigScreen = true;
     if (typeof window !== 'undefined') {
       theme = localStorage.getItem('theme') || 'light';
-      this.lastLocation = localStorage.getItem('lastLocation') || '';
       isBigScreen = window.innerWidth > 1100;
     }
+
+    let theme = 'light';
     this.state = {
       theme,
       isBigScreen,
@@ -46,7 +45,7 @@ export default class BaseLayout extends React.Component {
   }
 
   managePageScroll = e => {
-    if (window.location.href === '/') return;
+    if (this.props.location.pathname === '/') return;
     const firedBy = e.target.id;
     if (firedBy === 'side-menu') return;
     const newScrollPosition = window.scrollY;
@@ -124,49 +123,33 @@ export default class BaseLayout extends React.Component {
 
   render() {
     console.log('RENDER BASE LAYOUT');
-    console.log(this.props.location);
-    const currentPath = '/';
+    console.log(this.props.location.pathname);
+    const currentPath = this.props.location.pathname;
     const isHome = currentPath === '/';
-
     let theme;
     if (isHome) {
       theme = lightTheme;
     } else {
       theme = this.state.theme === 'light' ? lightTheme : darkTheme;
     }
-    const Paths = {
-      currentPath,
-      isHome,
-      lastLocation: this.lastLocation,
-    };
-
     return (
-      <UiContext.Provider
-        value={{ ...this.UiActions, ...Paths, ...this.state }}
-      >
+      <UiContext.Provider value={{ ...this.UiActions, ...this.state }}>
         <ThemeProvider theme={theme}>
-          <Location>
-            {({ location }) => (
-              <AppContainer
-                onClick={this.UiActions.closeSideBar}
-                isHome={location.pathname === '/'}
-              >
-                <Header
-                  isHome={location.pathname === '/'}
-                  theme={this.state.theme}
-                  changeTheme={this.UiActions.changeTheme}
-                  isShowNavBar={this.state.isShowNavBar}
-                />
-                <Main
-                  onTouchStart={this.onTouchStart}
-                  onTouchEnd={this.onTouchEnd}
-                >
-                  {this.props.children}
-                </Main>
-                <Footer />
-              </AppContainer>
-            )}
-          </Location>
+          <AppContainer onClick={this.UiActions.closeSideBar} isHome={isHome}>
+            <Head />
+            <Header
+              isHome={isHome}
+              theme={this.state.theme}
+              changeTheme={this.UiActions.changeTheme}
+              isShowNavBar={this.state.isShowNavBar}
+              toggleSideBar={this.UiActions.toggleSideBar}
+              isBigScreen={this.state.isBigScreen}
+            />
+            <Main onTouchStart={this.onTouchStart} onTouchEnd={this.onTouchEnd}>
+              {this.props.children}
+            </Main>
+            <Footer />
+          </AppContainer>
         </ThemeProvider>
       </UiContext.Provider>
     );

@@ -14,7 +14,6 @@ import {
   Td,
   TableWrapper,
 } from 'components';
-import PageTemplate from 'templates/PageTemplate';
 // import forkTree from './fork-tree.png';
 // import regularFork from './regular-fork.png';
 // import hardForkRules from './hard-fork-rules.png';

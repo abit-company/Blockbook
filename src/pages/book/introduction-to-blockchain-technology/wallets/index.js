@@ -10,13 +10,11 @@ import {
   Bold,
 } from 'components';
 import styled from 'styled-components';
-import PageTemplate from 'templates/PageTemplate';
 // import paperWallet from './paper-wallet.png';
 // import softwareWallet from './exodus-wallet.png';
 // import hardwareWallet from './ledger.png';
 
 const Wallets = () => (
-  <PageTemplate>
     <Page>
       <ChapterTitle>Wallets</ChapterTitle>
       <Paragraph>
@@ -105,7 +103,6 @@ const Wallets = () => (
         restore your private keys in another device.
       </Paragraph>
     </Page>
-  </PageTemplate>
 );
 
 export default Wallets;

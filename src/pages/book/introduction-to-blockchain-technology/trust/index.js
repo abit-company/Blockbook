@@ -9,10 +9,8 @@ import {
   ImageWrapper,
 } from 'components';
 import styled from 'styled-components';
-import PageTemplate from 'templates/PageTemplate';
 
 const Trust = () => (
-  <PageTemplate>
     <Page>
       <ChapterTitle>Trust</ChapterTitle>
       <Paragraph>
@@ -107,7 +105,6 @@ const Trust = () => (
         </li>
       </ul>
     </Page>
-  </PageTemplate>
 );
 
 export default Trust;

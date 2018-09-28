@@ -33,15 +33,11 @@ const nextLink = currentPath => {
   }
   return null;
 };
-const PageNavigationFooter = () => (
-  <UIContext.Consumer>
-    {({ currentPath }) => (
-      <NavFooter>
-        {prevLink(currentPath)}
-        {nextLink(currentPath)}
-      </NavFooter>
-    )}
-  </UIContext.Consumer>
+const PageNavigationFooter = ({ currentPath }) => (
+  <NavFooter>
+    {prevLink(currentPath)}
+    {nextLink(currentPath)}
+  </NavFooter>
 );
 
 const ChapterName = styled.span`

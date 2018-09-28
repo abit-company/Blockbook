@@ -9,7 +9,6 @@ import {
   Italic,
   Bold,
 } from 'components';
-import PageTemplate from 'templates/PageTemplate';
 // import lowThroughput from './scaling.png';
 // import scalingOffChain from './scaling-off-chain.png';
 // import lightningNetworkOverview from './lightning-overview.png';
@@ -19,7 +18,6 @@ import PageTemplate from 'templates/PageTemplate';
 // import lightningRoutes from './lightning-routes.png';
 
 const Scaling = () => (
-  <PageTemplate>
     <Page>
       <ChapterTitle>Scaling</ChapterTitle>
       <Paragraph>
@@ -193,7 +191,6 @@ const Scaling = () => (
         streaming could became a reality thanks to the blockchain.
       </Paragraph>
     </Page>
-  </PageTemplate>
 );
 
 export default Scaling;

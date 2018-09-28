@@ -10,7 +10,6 @@ import {
   Bold,
 } from 'components';
 import styled from 'styled-components';
-import PageTemplate from 'templates/PageTemplate';
 // import dlt from './dlt-blockchains.png';
 // import cyclicAcyclic from './cyclic-acyclic.png';
 // import tangle from './tangle.png';
