@@ -1,9 +1,9 @@
 import React from 'react';
 import { Paragraph, Page, ChapterTitle, SubChapterTitle } from 'components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+const Examples = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Examples</ChapterTitle>
       <Paragraph>
@@ -48,5 +48,7 @@ export default () => (
         additional actions by the users.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default Examples;

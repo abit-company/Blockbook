@@ -11,7 +11,7 @@ import {
 } from 'components';
 import PageTemplate from 'templates/PageTemplate';
 
-export const OtherCryptocurrencies = () => (
+const OtherCryptocurrencies = () => (
   <PageTemplate>
     <Page>
       <ChapterTitle>
@@ -108,3 +108,5 @@ export const OtherCryptocurrencies = () => (
     </Page>
   </PageTemplate>
 );
+
+export default OtherCryptocurrencies;

@@ -8,10 +8,10 @@ import {
   Italic,
   Bold,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+const Oracles = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Oracles</ChapterTitle>
       <Paragraph>
@@ -39,5 +39,7 @@ export default () => (
         necessaries real world information needed to perform a computation.
       </Important>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default Oracles;

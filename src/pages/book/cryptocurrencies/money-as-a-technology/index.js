@@ -11,7 +11,7 @@ import {
 } from 'components';
 import PageTemplate from 'templates/PageTemplate';
 
-export const MoneyAsATechnology = () => (
+const MoneyAsATechnology = () => (
   <PageTemplate>
     <Page>
       <ChapterTitle>Money as a technology</ChapterTitle>
@@ -160,3 +160,5 @@ export const MoneyAsATechnology = () => (
     </Page>
   </PageTemplate>
 );
+
+export default MoneyAsATechnology;

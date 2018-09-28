@@ -9,10 +9,10 @@ import {
   Italic,
   Bold,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+const Ethereum = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Ethereum</ChapterTitle>
       <Paragraph>
@@ -145,5 +145,7 @@ export default () => (
         kitties in CryptoKitties).
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default Ethereum;

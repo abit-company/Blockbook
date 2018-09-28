@@ -12,7 +12,7 @@ import {
 } from 'components';
 import PageTemplate from 'templates/PageTemplate';
 
-export const Bitcoin = () => (
+const Bitcoin = () => (
   <PageTemplate>
     <Page>
       <ChapterTitle>Bitcoin</ChapterTitle>
@@ -101,3 +101,5 @@ export const Bitcoin = () => (
     </Page>
   </PageTemplate>
 );
+
+export default Bitcoin;

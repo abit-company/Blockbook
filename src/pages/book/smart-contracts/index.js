@@ -8,11 +8,11 @@ import {
   Italic,
   Bold,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
-import ifttt from './ifttt.png';
+import PageTemplate from 'templates/PageTemplate';
+// import ifttt from './ifttt.png';
 
-export default () => (
-  <PageLayout>
+const SmartContracts = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Smart contracts - introduction</ChapterTitle>
       <Paragraph>
@@ -59,7 +59,9 @@ export default () => (
         application. Events trigger functions executed by the smart contract.
         Based on some event the smart contract react with some actions.
       </Important>
-      <ImageWrapper label="If this then that">{ifttt}</ImageWrapper>
+      {/* <ImageWrapper label="If this then that">{ifttt}</ImageWrapper> */}
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default SmartContracts;

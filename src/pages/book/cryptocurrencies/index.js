@@ -9,11 +9,11 @@ import {
   Italic,
   Bold,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
-import digitalCopy from './digital-copy.png';
+import PageTemplate from 'templates/PageTemplate';
+// import digitalCopy from './digital-copy.png';
 
-export default () => (
-  <PageLayout>
+const Cryptocurrencies = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Cryptocurrencies - Introduction</ChapterTitle>
       <Paragraph>
@@ -46,7 +46,7 @@ export default () => (
         could be duplicated as many times as we want, it does not cause any
         problem to anyone.
       </Paragraph>
-      <ImageWrapper label="Digital copy">{digitalCopy}</ImageWrapper>
+      {/* <ImageWrapper label="Digital copy">{digitalCopy}</ImageWrapper> */}
       <Important>But what if we want to transfer value?</Important>
       <Paragraph>
         A model where digital entities could easily be duplicated clearly does
@@ -89,5 +89,7 @@ export default () => (
         blockchain is to value.
       </Important>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default Cryptocurrencies;

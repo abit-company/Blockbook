@@ -10,9 +10,9 @@ import {
   Bold,
 } from 'components';
 import PageTemplate from 'templates/PageTemplate';
-import digitalCurrencies from './digital-currencies-crypto.png';
+// import digitalCurrencies from './digital-currencies-crypto.png';
 
-export const CryptocurrenciesOverview = () => (
+const CryptocurrenciesOverview = () => (
   <PageTemplate>
     <Page>
       <ChapterTitle>Cryptocurrencies overview</ChapterTitle>
@@ -21,9 +21,9 @@ export const CryptocurrenciesOverview = () => (
         cryptocurrency is a digital currency, but not every digital currency is
         a cryptocurrency.
       </Paragraph>
-      <ImageWrapper label="Digital currencies and cryptocurrencies">
+      {/* <ImageWrapper label="Digital currencies and cryptocurrencies">
         {digitalCurrencies}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <Important>
         With the term cryptocurrencies we refer to all the digital currencies
         based on Blockchain technology (or distributed ledgers, the underlying
@@ -199,3 +199,5 @@ export const CryptocurrenciesOverview = () => (
     </Page>
   </PageTemplate>
 );
+
+export default CryptocurrenciesOverview;
