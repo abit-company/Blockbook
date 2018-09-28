@@ -66,6 +66,7 @@ const Li = styled.li`
 const Ul = styled.ul`
   list-style-type: none;
   padding-left: 1rem;
+  font-size: .9rem;
   /* border-left: 1px solid ${props => props.theme.baseTextColor}; */
 `;
 
