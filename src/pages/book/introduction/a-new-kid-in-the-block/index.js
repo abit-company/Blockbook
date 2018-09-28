@@ -1,6 +1,5 @@
 import React from 'react';
 import { Paragraph, Page, ChapterTitle } from 'components';
-import PageTemplate from 'templates/PageTemplate';
 
 const NewKidInTheBlock = () => (
   <Page>

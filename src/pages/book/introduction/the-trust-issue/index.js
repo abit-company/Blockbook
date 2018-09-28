@@ -1,6 +1,5 @@
 import React from 'react';
 import { Paragraph, Page, Cit, Important, ChapterTitle } from 'components';
-import PageTemplate from 'templates/PageTemplate';
 
 const TheTrustIssue = () => (
   <Page>
