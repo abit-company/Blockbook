@@ -2,7 +2,7 @@ import React from 'react';
 import { Paragraph, Page, Cit, Important, ChapterTitle } from 'components';
 import PageTemplate from 'templates/PageTemplate';
 
-export const TheTrustIssue = () => (
+const TheTrustIssue = () => (
   <PageTemplate>
     <Page>
       <ChapterTitle>The trust issue</ChapterTitle>
@@ -63,3 +63,5 @@ export const TheTrustIssue = () => (
     </Page>
   </PageTemplate>
 );
+
+export default TheTrustIssue;

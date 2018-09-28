@@ -2,7 +2,7 @@ import React from 'react';
 import { Paragraph, Page, ChapterTitle } from 'components';
 import PageTemplate from 'templates/PageTemplate';
 
-export const NewKidInTheBlock = () => (
+const NewKidInTheBlock = () => (
   <PageTemplate>
     <Page>
       <ChapterTitle>A new kind in the block</ChapterTitle>
@@ -27,3 +27,5 @@ export const NewKidInTheBlock = () => (
     </Page>
   </PageTemplate>
 );
+
+export default NewKidInTheBlock;

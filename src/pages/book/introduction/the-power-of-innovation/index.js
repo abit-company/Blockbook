@@ -2,7 +2,7 @@ import React from 'react';
 import { Paragraph, Page, ChapterTitle } from 'components';
 import PageTemplate from 'templates/PageTemplate';
 
-export const ThePowerOfInnovation = () => (
+const ThePowerOfInnovation = () => (
   <PageTemplate>
     <Page>
       <ChapterTitle>The power of innovation</ChapterTitle>
@@ -40,3 +40,5 @@ export const ThePowerOfInnovation = () => (
     </Page>
   </PageTemplate>
 );
+
+export default ThePowerOfInnovation;
