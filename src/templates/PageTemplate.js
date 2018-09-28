@@ -8,7 +8,6 @@ import {
   IconGithub,
 } from '../components';
 import UiContext from '../components/UiContext';
-import BaseLayout from '../components/BaseLayout';
 
 const EditOnGithub = ({ currentPath }) => (
   <div
