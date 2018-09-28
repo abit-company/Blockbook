@@ -74,9 +74,8 @@ export default class PageTemplate extends React.Component {
   render() {
     return (
       <UiContext.Consumer>
-        {({ isSideBarOpen, isBigScreen, currentPath, updateLastLocation }) => (
+        {({ isSideBarOpen, isBigScreen, currentPath }) => (
           <Page>
-            {updateLastLocation(currentPath)}
             <SideBarWrapper
               isSideBarOpen={isSideBarOpen}
               isBigScreen={isBigScreen}

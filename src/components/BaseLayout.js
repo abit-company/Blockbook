@@ -42,12 +42,6 @@ export default class BaseLayout extends React.Component {
         localStorage.setItem('theme', newTheme);
         this.setState({ theme: newTheme });
       },
-      updateLastLocation: lastLocation => {
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('lastLocation', lastLocation);
-          this.lastLocation = lastLocation;
-        }
-      },
     };
   }
 

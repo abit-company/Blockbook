@@ -19,4 +19,5 @@ export const wrapPageElement = ({ element, props }) => {
 
 export const onRouteUpdate = ({ location }) => {
   console.log('new pathname', location.pathname);
+  localStorage.setItem('lastLocation', location.pathname);
 };
