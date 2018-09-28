@@ -1,9 +1,9 @@
 import React from 'react';
 import { Paragraph, Page, Important } from 'components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+const WhatIsABlockchain = () => (
+  <PageTemplate>
     <Page>
       <h2>What is a Blockchain</h2>
       <Paragraph>
@@ -41,5 +41,7 @@ export default () => (
         all the concepts we need to fully understand any Blockchain.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default WhatIsABlockchain;

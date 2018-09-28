@@ -9,10 +9,10 @@ import {
   ImageWrapper,
 } from 'components';
 import styled from 'styled-components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+const Trust = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Trust</ChapterTitle>
       <Paragraph>
@@ -107,5 +107,7 @@ export default () => (
         </li>
       </ul>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default Trust;

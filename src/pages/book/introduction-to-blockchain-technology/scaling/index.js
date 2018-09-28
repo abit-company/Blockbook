@@ -9,17 +9,17 @@ import {
   Italic,
   Bold,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
-import lowThroughput from './scaling.png';
-import scalingOffChain from './scaling-off-chain.png';
-import lightningNetworkOverview from './lightning-overview.png';
-import lightningTrans1 from './lightning-trans-1.png';
-import lightningTrans2 from './lightning-trans-2.png';
-import lightningTrans3 from './lightning-trans-3.png';
-import lightningRoutes from './lightning-routes.png';
+import PageTemplate from 'templates/PageTemplate';
+// import lowThroughput from './scaling.png';
+// import scalingOffChain from './scaling-off-chain.png';
+// import lightningNetworkOverview from './lightning-overview.png';
+// import lightningTrans1 from './lightning-trans-1.png';
+// import lightningTrans2 from './lightning-trans-2.png';
+// import lightningTrans3 from './lightning-trans-3.png';
+// import lightningRoutes from './lightning-routes.png';
 
-export default () => (
-  <PageLayout>
+const Scaling = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Scaling</ChapterTitle>
       <Paragraph>
@@ -45,7 +45,7 @@ export default () => (
           seconds (tps). Bitcoin handle around 7 tps, Ethereum 10-30 tps (Visa
           can reach 50.000 tps at peak). Transactions that exceed this limit are
           queued and processed later.
-          <ImageWrapper label="Low throughput">{lowThroughput}</ImageWrapper>
+          {/* <ImageWrapper label="Low throughput">{lowThroughput}</ImageWrapper> */}
         </li>
         <li>
           <Bold>Slow transactions:</Bold>
@@ -94,9 +94,9 @@ export default () => (
         executed in a layer built on top of the blockchain (second layer) using
         specifically designed payment channels.
       </Important>
-      <ImageWrapper label="Off chain payement channel">
+      {/* <ImageWrapper label="Off chain payement channel">
         {scalingOffChain}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <Paragraph>
         Payment channels allow users to transfer money to each other without the
         need to verify each transaction on the blockchain but still maintaining
@@ -110,9 +110,9 @@ export default () => (
         a Blockchain and it is composed by a network of bidirectional payment
         channels between users.
       </Important>
-      <ImageWrapper label="Lightning network overview">
+      {/* <ImageWrapper label="Lightning network overview">
         {lightningNetworkOverview}
-      </ImageWrapper>
+      </ImageWrapper> */}
 
       <Paragraph>
         Every channel is composed by a multisignature address created by two
@@ -130,9 +130,9 @@ export default () => (
         </li>
         <li>
           The contract is saved on the blockchain and the channel is opened.
-          <ImageWrapper label="Opening Lightning channel">
+          {/* <ImageWrapper label="Opening Lightning channel">
             {lightningTrans1}
-          </ImageWrapper>
+          </ImageWrapper> */}
         </li>
         <li>
           <Italic>A</Italic> and <Italic>B</Italic> could make transactions
@@ -141,16 +141,16 @@ export default () => (
           contract, using promises conceptually similar to IOU (I owe you)
           contracts. You don’t need to trust the other party since nobody could
           take the money without fulfilling the terms of the contact.
-          <ImageWrapper label="Lightning transactions">
+          {/* <ImageWrapper label="Lightning transactions">
             {lightningTrans2}
-          </ImageWrapper>
+          </ImageWrapper> */}
         </li>
         <li>
           When one of the actor decide to close the channel the blockchain
           resolve the contract by giving each party the amount they deserve.
-          <ImageWrapper label="Lightning channel closed">
+          {/* <ImageWrapper label="Lightning channel closed">
             {lightningTrans3}
-          </ImageWrapper>
+          </ImageWrapper> */}
         </li>
       </ol>
       <Paragraph>
@@ -180,7 +180,7 @@ export default () => (
         choose the preferred route, for example the one with the lowest fee or
         the fastest one.
       </Paragraph>
-      <ImageWrapper label="Lightning routes">{lightningRoutes}</ImageWrapper>
+      {/* <ImageWrapper label="Lightning routes">{lightningRoutes}</ImageWrapper> */}
       <h5>Micropayments and streaming payments</h5>
       <Paragraph>
         A system where is possible to make instant payments with (almost) no
@@ -193,5 +193,7 @@ export default () => (
         streaming could became a reality thanks to the blockchain.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default Scaling;

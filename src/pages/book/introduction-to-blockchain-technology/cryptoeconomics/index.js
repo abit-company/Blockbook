@@ -9,10 +9,10 @@ import {
   ImageWrapper,
 } from 'components';
 import styled from 'styled-components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+const CryptoEconomics = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Cryptoeconomics</ChapterTitle>
       <Paragraph>
@@ -74,5 +74,7 @@ export default () => (
         <li>Privileges loss: lose the possibility to verify transactions.</li>
       </ul>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default CryptoEconomics;

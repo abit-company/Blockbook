@@ -14,16 +14,16 @@ import {
   Td,
   TableWrapper,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
-import forkTree from './fork-tree.png';
-import regularFork from './regular-fork.png';
-import hardForkRules from './hard-fork-rules.png';
-import softForkRules from './soft-fork-rules.png';
-import longestChain from './longest-chain.png';
-import chainSplit from './chain-split.png';
+import PageTemplate from 'templates/PageTemplate';
+// import forkTree from './fork-tree.png';
+// import regularFork from './regular-fork.png';
+// import hardForkRules from './hard-fork-rules.png';
+// import softForkRules from './soft-fork-rules.png';
+// import longestChain from './longest-chain.png';
+// import chainSplit from './chain-split.png';
 
-export default () => (
-  <PageLayout>
+const Forks = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Forks</ChapterTitle>
       <Paragraph>
@@ -51,9 +51,9 @@ export default () => (
         stringent (not backward compatible) is an hard fork. If the rules became
         more stringent (backward compatible) is a soft fork.
       </Paragraph>
-      <ImageWrapper label="Normal fork, soft fork, hard fork">
+      {/* <ImageWrapper label="Normal fork, soft fork, hard fork">
         {forkTree}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <Paragraph>
         To quote Andreas Antonopoulos:
         <cite>
@@ -80,7 +80,7 @@ export default () => (
         to their blockchain, the miners close to miner B acknowledge the fact
         that miner B found the new block and add this block to their blockchain.
       </Paragraph>
-      <ImageWrapper label="Regular fork">{regularFork}</ImageWrapper>
+      {/* <ImageWrapper label="Regular fork">{regularFork}</ImageWrapper> */}
       <Paragraph>
         Since there is no central authority to solve the ambiguity the chain
         remain splitted until the next block is found. In case of a conflict the
@@ -88,7 +88,7 @@ export default () => (
         of the two chain became the longest chain and all the nodes on the other
         chain merge to the longest chain.
       </Paragraph>
-      <ImageWrapper label="Longest chain">{longestChain}</ImageWrapper>
+      {/* <ImageWrapper label="Longest chain">{longestChain}</ImageWrapper> */}
       <Paragraph>
         At T4 the chain is splitted. At T5 the miners on chain A find a new
         block and chain A became the longest chain. Nodes that have acknowledged
@@ -109,7 +109,7 @@ export default () => (
         follows the old consensus rules will accept blocks created by nodes that
         follow the new rules. New rules are a subset of old rules.
       </Important>
-      <ImageWrapper label="Soft fork rules set">{softForkRules}</ImageWrapper>
+      {/* <ImageWrapper label="Soft fork rules set">{softForkRules}</ImageWrapper> */}
       <Paragraph>
         A soft fork for example is reducing the size of a block from 2MB to 1MB.
         Soft forks are usually an optimization of the existing protocol.
@@ -135,7 +135,7 @@ export default () => (
         An hard fork is a change to the consensus rules that is not backwards
         compatible, making previously invalid blocks valid.
       </Important>
-      <ImageWrapper label="Hard fork rules set">{hardForkRules}</ImageWrapper>
+      {/* <ImageWrapper label="Hard fork rules set">{hardForkRules}</ImageWrapper> */}
       <Paragraph>
         After an hard fork, on the network will start appearing blocks that were
         previously considered invalid and the nodes that do not update won’t be
@@ -151,9 +151,9 @@ export default () => (
         of the Blockchain and every member who believe in this fork upgrade
         their systems, leaving the previous blockchain.
       </Paragraph>
-      <ImageWrapper label="Hard fork with chain split">
+      {/* <ImageWrapper label="Hard fork with chain split">
         {chainSplit}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <Paragraph>
         There could be many reason that lead to an hard fork:
       </Paragraph>
@@ -246,5 +246,7 @@ export default () => (
         money.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default Forks;

@@ -7,10 +7,10 @@ import {
   SubChapterTitle,
   Address,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+const Addresses = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Addresses</ChapterTitle>
       <Paragraph>
@@ -84,5 +84,7 @@ export default () => (
         kidnapped is mitigated.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default Addresses;

@@ -10,10 +10,10 @@ import {
   Bold,
 } from 'components';
 import styled from 'styled-components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+const PublicKeyCryptography = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Public-key cryptography</ChapterTitle>
       <Paragraph>
@@ -119,5 +119,7 @@ export default () => (
         </li>
       </ul>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default PublicKeyCryptography;

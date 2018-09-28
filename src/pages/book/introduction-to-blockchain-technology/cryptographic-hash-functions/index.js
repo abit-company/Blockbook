@@ -14,13 +14,13 @@ import {
   Address,
 } from 'components';
 import styled from 'styled-components';
-import PageLayout from 'layouts/PageLayout';
-import blockchainHash from './blockchain-hash.png';
-import blockchainTampered from './blockchain-tampered-hash.png';
-import compareHashes from './compare-hashes.png';
+import PageTemplate from 'templates/PageTemplate';
+// import blockchainHash from './blockchain-hash.png';
+// import blockchainTampered from './blockchain-tampered-hash.png';
+// import compareHashes from './compare-hashes.png';
 
-export default () => (
-  <PageLayout>
+const CryptographicHashFunctions = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Cryptographic hash functions</ChapterTitle>
       <Important>
@@ -110,16 +110,16 @@ export default () => (
         string. For every new block that is generated, the previous block’s hash
         is also used as input to generate the new hash.
       </Paragraph>
-      <ImageWrapper label="Hash link between blocks">
+      {/* <ImageWrapper label="Hash link between blocks">
         {blockchainHash}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <Paragraph>
         If someone tries to maliciously add, remove, or change some information
         in any block, this change will affect all the following hashes.
       </Paragraph>
-      <ImageWrapper label="Attempt to modify a block">
+      {/* <ImageWrapper label="Attempt to modify a block">
         {blockchainTampered}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <Paragraph>
         All the possible states of a blockchain can be represented by a
         fixed-data string.
@@ -134,9 +134,11 @@ export default () => (
         everyone. There is no need analyze the entire blockchain, it is enough
         to look a the last block hash to get the current state.
       </Paragraph>
-      <ImageWrapper label="Compare two blockchains">
+      {/* <ImageWrapper label="Compare two blockchains">
         {compareHashes}
-      </ImageWrapper>
+      </ImageWrapper> */}
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default CryptographicHashFunctions;

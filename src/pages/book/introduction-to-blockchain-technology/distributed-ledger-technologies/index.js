@@ -10,13 +10,13 @@ import {
   Bold,
 } from 'components';
 import styled from 'styled-components';
-import PageLayout from 'layouts/PageLayout';
-import dlt from './dlt-blockchains.png';
-import cyclicAcyclic from './cyclic-acyclic.png';
-import tangle from './tangle.png';
+import PageTemplate from 'templates/PageTemplate';
+// import dlt from './dlt-blockchains.png';
+// import cyclicAcyclic from './cyclic-acyclic.png';
+// import tangle from './tangle.png';
 
-export default () => (
-  <PageLayout>
+const DistributedLedgerTechnologies = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Distributed Ledger Technologies</ChapterTitle>
       <Paragraph>
@@ -30,7 +30,7 @@ export default () => (
         leverage the concept of a distributed ledger but do not necessarily
         structure the ledger as a chain of blocks.
       </Important>
-      <ImageWrapper label="DLTs and Blockchains">{dlt}</ImageWrapper>
+      {/* <ImageWrapper label="DLTs and Blockchains">{dlt}</ImageWrapper> */}
       <Important>
         Blockchain is a particular type of DLT where the distributed ledger is
         structured as a chain of blocks.
@@ -53,9 +53,9 @@ export default () => (
         A DAG is graph where every node is connected to some other nodes through
         directed links and there are no cycles.
       </Paragraph>
-      <ImageWrapper label="Cyclic vs Acyclic graph">
+      {/* <ImageWrapper label="Cyclic vs Acyclic graph">
         {cyclicAcyclic}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <Paragraph>
         In a tangle there is no concept of blocks, chain or even mining or
         transaction fee. The main idea is that in order to issue a transaction,
@@ -65,7 +65,9 @@ export default () => (
         resulting in (theoretically) a very scalable system where transactions
         are verified in parallel (there is no tps limit).
       </Paragraph>
-      <ImageWrapper label="Tangle">{tangle}</ImageWrapper>
+      {/* <ImageWrapper label="Tangle">{tangle}</ImageWrapper> */}
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default DistributedLedgerTechnologies;

@@ -10,13 +10,13 @@ import {
   Bold,
 } from 'components';
 import styled from 'styled-components';
-import PageLayout from 'layouts/PageLayout';
-import paperWallet from './paper-wallet.png';
-import softwareWallet from './exodus-wallet.png';
-import hardwareWallet from './ledger.png';
+import PageTemplate from 'templates/PageTemplate';
+// import paperWallet from './paper-wallet.png';
+// import softwareWallet from './exodus-wallet.png';
+// import hardwareWallet from './ledger.png';
 
-export default () => (
-  <PageLayout>
+const Wallets = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Wallets</ChapterTitle>
       <Paragraph>
@@ -60,9 +60,9 @@ export default () => (
         (or any other material). The security of a paper wallet is directly
         linked to the safety of the place the paper is stored.{' '}
       </Paragraph>
-      <ImageWrapper label="Paper wallet, generated with www.bitaddress.org">
+      {/* <ImageWrapper label="Paper wallet, generated with www.bitaddress.org">
         {paperWallet}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <SubChapterTitle>Software wallets</SubChapterTitle>
       <Paragraph>
         A software wallet is an application that can be installed on a computer
@@ -71,9 +71,9 @@ export default () => (
         user interface. However if your machine is compromised your funds are in
         danger.
       </Paragraph>
-      <ImageWrapper label="Exodus software wallet">
+      {/* <ImageWrapper label="Exodus software wallet">
         {softwareWallet}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <SubChapterTitle>Hardware wallet</SubChapterTitle>
       <Paragraph>
         An hardware wallet stores the private keys in a secure hardware device.
@@ -85,9 +85,9 @@ export default () => (
         Transaction are signed inside the device and even if the wallet is
         connected to a compromised machine the private keys are safe.
       </Paragraph>
-      <ImageWrapper label="Ledger nano s hardware wallet">
+      {/* <ImageWrapper label="Ledger nano s hardware wallet">
         {hardwareWallet}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <SubChapterTitle>Backups and HD wallets</SubChapterTitle>
       <Paragraph>
         Usually the first time a wallet is used it gives you a list of words to
@@ -105,5 +105,7 @@ export default () => (
         restore your private keys in another device.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default Wallets;

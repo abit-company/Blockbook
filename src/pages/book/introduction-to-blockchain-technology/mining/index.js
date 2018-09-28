@@ -13,16 +13,16 @@ import {
   Td,
   TableWrapper,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
-import mining from './mining.png';
-import newBlockValid from './new-block-valid.png';
-import newBlockInvalid from './new-block-invalid.png';
-import powMiningProcess from './pow-mining-process.png';
-import honestMiners from './honest-miners.png';
-import maliciousMiner from './malicius-miner.png';
+import PageTemplate from 'templates/PageTemplate';
+// import mining from './mining.png';
+// import newBlockValid from './new-block-valid.png';
+// import newBlockInvalid from './new-block-invalid.png';
+// import powMiningProcess from './pow-mining-process.png';
+// import honestMiners from './honest-miners.png';
+// import maliciousMiner from './malicius-miner.png';
 
-export default () => (
-  <PageLayout>
+const Mining = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Mining</ChapterTitle>
       <Paragraph>
@@ -49,9 +49,9 @@ export default () => (
             fees take usually less time to be confirmed).
           </Paragraph>
         </li>
-        <ImageWrapper inList label="Choosing transactions">
+        {/* <ImageWrapper inList label="Choosing transactions">
           {mining}
-        </ImageWrapper>
+        </ImageWrapper> */}
         <li>
           <Paragraph>
             <Bold>Ordering and grouping the transactions into a block</Bold>. A
@@ -69,10 +69,10 @@ export default () => (
           </Paragraph>
         </li>
       </ul>
-      <ImageWrapper label="New block is valid">{newBlockValid}</ImageWrapper>
+      {/* <ImageWrapper label="New block is valid">{newBlockValid}</ImageWrapper>
       <ImageWrapper label="New block is invalid">
         {newBlockInvalid}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <SubChapterTitle>Proof of work (PoW)</SubChapterTitle>
       <Paragraph>
         Proof of work is protocol used to achieve distributed consensus. A proof
@@ -97,7 +97,7 @@ export default () => (
         for the rest of the nodes to check if solution is correct. If the block
         is valid it is broadcasted, otherwise it is ignored.
       </Paragraph>
-      <ImageWrapper label="PoW mining process">{powMiningProcess}</ImageWrapper>
+      {/* <ImageWrapper label="PoW mining process">{powMiningProcess}</ImageWrapper> */}
       <ol>
         <li>
           <Paragraph>
@@ -204,8 +204,8 @@ export default () => (
         really difficult (practically impossible) to change transactions history
         after a specific number of confirmations.
       </Paragraph>
-      <ImageWrapper label="Malicious miner">{maliciousMiner}</ImageWrapper>
-      <ImageWrapper label="Honest miners">{honestMiners}</ImageWrapper>
+      {/* <ImageWrapper label="Malicious miner">{maliciousMiner}</ImageWrapper>
+      <ImageWrapper label="Honest miners">{honestMiners}</ImageWrapper> */}
       <Paragraph>
         If an attacker tries to tamper a transaction in block 103 the only way
         he could succeed is if he manages to recompute the proof of work for all
@@ -435,5 +435,7 @@ export default () => (
         resistant in PoW, or changing the stake parameters in PoS).
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default Mining;

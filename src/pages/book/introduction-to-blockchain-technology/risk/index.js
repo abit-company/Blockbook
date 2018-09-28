@@ -9,10 +9,10 @@ import {
   ImageWrapper,
 } from 'components';
 import styled from 'styled-components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+const Risk = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Risk</ChapterTitle>
       <Paragraph>
@@ -72,5 +72,7 @@ export default () => (
         keeps the system secure. There is no central point of attack.
       </Important>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default Risk;

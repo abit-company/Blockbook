@@ -9,11 +9,11 @@ import {
   Bold,
   ImageWrapper,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
-import consensus from './consensus.png';
+import PageTemplate from 'templates/PageTemplate';
+// import consensus from './consensus.png';
 
-export default () => (
-  <PageLayout>
+const Consensus = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Consensus</ChapterTitle>
       <Paragraph>
@@ -49,7 +49,7 @@ export default () => (
         and hasn’t happened. Consensus holds the only possible truth about the
         state of the Blockchain.
       </Important>
-      <ImageWrapper label="Blockchain and consesus">{consensus}</ImageWrapper>
+      {/* <ImageWrapper label="Blockchain and consesus">{consensus}</ImageWrapper> */}
       <Paragraph>
         A Blockchain uses mathematics, economics and game theory to incentivize
         all actors to reach a an agreement over a single state. However reaching
@@ -100,5 +100,7 @@ export default () => (
         a process called mining.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default Consensus;

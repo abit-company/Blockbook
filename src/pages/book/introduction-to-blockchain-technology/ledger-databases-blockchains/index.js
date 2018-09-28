@@ -7,13 +7,13 @@ import {
   SubChapterTitle,
   ImageWrapper,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
-import ledgerDatabaseBlockchain from './db-ledger-blockchain.png';
-import blockchainImg from './blockchain.png';
-import BlockImg from './block.png';
+import PageTemplate from 'templates/PageTemplate';
+// import ledgerDatabaseBlockchain from './db-ledger-blockchain.png';
+// import blockchainImg from './blockchain.png';
+// import BlockImg from './block.png';
 
-export default () => (
-  <PageLayout>
+const LedgerDatabaseBlockchain = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Ledgers, databases and Blockchains</ChapterTitle>
       <Paragraph>
@@ -43,9 +43,9 @@ export default () => (
         the term ledger rather than database.
       </Paragraph>
       <Important>A ledger can be seen as an append-only database.</Important>
-      <ImageWrapper label="ledger, databases and blockchains">
+      {/* <ImageWrapper label="ledger, databases and blockchains">
         {ledgerDatabaseBlockchain}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <Paragraph>
         We can identify some similarities between these technologies, but what
         are the differences between traditional databases and blockchains? First
@@ -80,9 +80,9 @@ export default () => (
         information - from simple records of transactions to entire computer
         programs.
       </Important>
-      <ImageWrapper label="Representation of a blockchain">
+      {/* <ImageWrapper label="Representation of a blockchain">
         {blockchainImg}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <Paragraph>
         We use Blockchain with capital "B" when referring to the overall system,
         and blockchain with lowercase "b" referring to the chain of blocks.
@@ -95,7 +95,7 @@ export default () => (
         block, resulting into a linear sequence which ultimately forms a chain.
         The first block is called the genesis block.
       </Important>
-      <ImageWrapper label="Block representation">{BlockImg}</ImageWrapper>
+      {/* <ImageWrapper label="Block representation">{BlockImg}</ImageWrapper> */}
       <Paragraph>
         The concept of chain of blocks is common to all Blockchain system, but
         different projects design their blockchains for different purposes. For
@@ -106,5 +106,7 @@ export default () => (
         hash function, which creates an unbreakable link between blocks.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default LedgerDatabaseBlockchain;

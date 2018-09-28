@@ -1,9 +1,9 @@
 import React from 'react';
 import { Paragraph, Page } from 'components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+const IntroductionToBlockchainTechnology = () => (
+  <PageTemplate>
     <Page>
       <h2>Introduction to Blockchain technology</h2>
       <Paragraph>
@@ -33,5 +33,7 @@ export default () => (
         at least a basic grasp of how it works.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default IntroductionToBlockchainTechnology;

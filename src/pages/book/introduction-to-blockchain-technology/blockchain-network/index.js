@@ -8,10 +8,10 @@ import {
   Italic,
   Bold,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+const BlockchainNetwork = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Blockchain network</ChapterTitle>
       <Paragraph>
@@ -209,5 +209,7 @@ export default () => (
         </li>
       </ul>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default BlockchainNetwork;

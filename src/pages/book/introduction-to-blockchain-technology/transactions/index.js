@@ -9,13 +9,13 @@ import {
   Italic,
   Bold,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
-import stateTransition from './state-transition.png';
-import transaction from './transaction.png';
-import confirmations from './confirmations.png';
+import PageTemplate from 'templates/PageTemplate';
+// import stateTransition from './state-transition.png';
+// import transaction from './transaction.png';
+// import confirmations from './confirmations.png';
 
-export default () => (
-  <PageLayout>
+const Transactions = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Transactions</ChapterTitle>
       <Paragraph>
@@ -47,9 +47,9 @@ export default () => (
         invalid and leaves the blockchain in its current state (i.e. atomic
         operation).
       </Important>
-      <ImageWrapper label="A valid transaction change the state of the blockchain">
+      {/* <ImageWrapper label="A valid transaction change the state of the blockchain">
         {stateTransition}
-      </ImageWrapper>
+      </ImageWrapper> */}
       <Paragraph>
         It is not possible for a valid transaction to be rejected, or to
         generate an intermediate state.
@@ -109,7 +109,7 @@ export default () => (
           </Paragraph>
         </li>
       </ul>
-      <ImageWrapper label="Transaction overview">{transaction}</ImageWrapper>
+      {/* <ImageWrapper label="Transaction overview">{transaction}</ImageWrapper> */}
       <SubChapterTitle>Confirmations</SubChapterTitle>
       <Paragraph>
         Every time a transaction is created it is broadcasted to the network to
@@ -140,7 +140,7 @@ export default () => (
         better to wait. After reaching enough confirmations a transaction can’t
         be reversed by anybody.
       </Paragraph>
-      <ImageWrapper label="Confirmations">{confirmations}</ImageWrapper>
+      {/* <ImageWrapper label="Confirmations">{confirmations}</ImageWrapper> */}
       <SubChapterTitle>Transaction fee</SubChapterTitle>
       <Paragraph>Usually a transaction includes a fee.</Paragraph>
       <Important>
@@ -154,5 +154,7 @@ export default () => (
         used to reward the miners.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );
+
+export default Transactions;
