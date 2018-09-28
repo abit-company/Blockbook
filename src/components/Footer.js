@@ -90,6 +90,7 @@ const Footer = () => (
         </div>
       </Link>
     </MadeBy>
+    HELLO@BLOCKBOOK.cc
     <Donations>
       <span>If you want to support this book feel free to donate</span>
       <DonationAddressesContainer>

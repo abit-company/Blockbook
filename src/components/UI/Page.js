@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import React from 'react';
+// import Highlightable from './Highlightable';
 
 const ChapterTitle = ({ children }) => (
   <H2
@@ -49,47 +50,14 @@ const Page = styled.div`
   line-height: 1.7;
 `;
 
-const Paragraph = styled.p`
+const HighlightableParagraph = styled.p`
   padding-bottom: 0.4rem;
   margin: 0;
 `;
 
-const ImageWrapper = props => (
-  <ImgContainer>
-    <ImgWrapper {...props}>
-      <Img alt={props.label} src={props.children} />
-      <Label>{props.label}</Label>
-    </ImgWrapper>
-  </ImgContainer>
-);
-
-const Label = styled.div`
-  font-size: 0.9rem;
-  text-align: center;
-  padding: 3px 10px;
-  color: ${props => props.theme.alwaysDark};
-  border-top: 1px solid ${props => props.theme.alwaysDark};
-  margin-top: 10px;
-`;
-const ImgContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-const ImgWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  border-radius: 2px;
-  margin: 15px 0;
-  padding: 15px;
-  max-width: ${props => (props.inList ? '500px' : '500px')};
-  @media only screen and (max-width: ${props => props.theme.breakMobile}) {
-    max-width: ${props => (props.inList ? '290px' : '400px')};
-  }
-  justify-content: center;
-  align-items: center;
+const Paragraph = styled.p`
+  padding-bottom: 0.4rem;
+  margin: 0;
 `;
 
 const Img = styled.img`
@@ -124,6 +92,6 @@ export {
   Bold,
   Paragraph,
   Page,
-  ImageWrapper,
   Address,
+  HighlightableParagraph,
 };

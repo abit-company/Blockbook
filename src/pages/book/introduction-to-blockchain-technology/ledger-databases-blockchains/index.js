@@ -1,4 +1,7 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+
 import {
   Paragraph,
   Page,
@@ -7,11 +10,8 @@ import {
   SubChapterTitle,
   ImageWrapper,
 } from 'components';
-// import ledgerDatabaseBlockchain from './db-ledger-blockchain.png';
-// import blockchainImg from './blockchain.png';
-// import BlockImg from './block.png';
 
-const LedgerDatabaseBlockchain = () => (
+const LedgerDatabaseBlockchain = ({ data }) => (
   <Page>
     <ChapterTitle>Ledgers, databases and Blockchains</ChapterTitle>
     <Paragraph>
@@ -39,9 +39,9 @@ const LedgerDatabaseBlockchain = () => (
       term ledger rather than database.
     </Paragraph>
     <Important>A ledger can be seen as an append-only database.</Important>
-    {/* <ImageWrapper label="ledger, databases and blockchains">
-        {ledgerDatabaseBlockchain}
-      </ImageWrapper> */}
+    <ImageWrapper label="ledger, databases and blockchains">
+      <Img fluid={data['ledgerDatabasesBlockchains'].childImageSharp.fluid} />
+    </ImageWrapper>
     <Paragraph>
       We can identify some similarities between these technologies, but what are
       the differences between traditional databases and blockchains? First of
@@ -79,8 +79,9 @@ const LedgerDatabaseBlockchain = () => (
         {blockchainImg}
       </ImageWrapper> */}
     <Paragraph>
-      We use Blockchain with capital "B" when referring to the overall system,
-      and blockchain with lowercase "b" referring to the chain of blocks.
+      We use Blockchain with capital &quot;B&quot; when referring to the overall
+      system, and blockchain with lowercase &quot;b&quot; referring to the chain
+      of blocks.
     </Paragraph>
     <SubChapterTitle>Blocks</SubChapterTitle>
     <Important>
@@ -102,5 +103,17 @@ const LedgerDatabaseBlockchain = () => (
     </Paragraph>
   </Page>
 );
+
+export const query = graphql`
+  query {
+    ledgerDatabasesBlockchains: file(relativePath: { eq: "introduction-to-blockchain-technology/ledger-databases-blockchains/ledger-databases-blockchains.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
 
 export default LedgerDatabaseBlockchain;

@@ -1,15 +1,20 @@
 import React from 'react';
-import { Paragraph, Page, ChapterTitle } from 'components';
+import {
+  Paragraph,
+  Page,
+  ChapterTitle,
+  HighlightableParagraph,
+} from 'components';
 
 const Introduction = () => (
   <Page>
     <ChapterTitle>Introduction - The power of innovation</ChapterTitle>
-    <Paragraph>
+    <HighlightableParagraph>
       In 1975 Steven Sasson, a Kodak engineer realised the first self-contained
       digital camera. Kodak told him to keep the invention private, worried that
       digital cameras could end up having a negative impact on their core
       business.
-    </Paragraph>
+    </HighlightableParagraph>
     <Paragraph>
       In 2007 half of the mobile-phones in the world were produced by Nokia.
       When Apple and Google came out with iOS and Android, Nokia sticked with

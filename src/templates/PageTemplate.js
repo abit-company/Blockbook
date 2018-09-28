@@ -6,6 +6,7 @@ import {
   // Highlightable,
   Link,
   IconGithub,
+  IconTwitter,
 } from '../components';
 import UiContext from '../components/UiContext';
 
@@ -89,7 +90,12 @@ export default class PageTemplate extends React.Component {
               <Content>
                 {isSideBarOpen ? <OverlaySideBar /> : null}
                 {this.props.children}
-                <EditOnGithub currentPath={this.props.location.pathname} />
+                <PageFooterContainer>
+                  <EditOnGithub currentPath={this.props.location.pathname} />
+                  <ShareOnTwitter>
+                    <IconTwitter />
+                  </ShareOnTwitter>
+                </PageFooterContainer>
                 <PageNavigationFooter
                   currentPath={this.props.location.pathname}
                 />
@@ -101,6 +107,18 @@ export default class PageTemplate extends React.Component {
     );
   }
 }
+
+const PageFooterContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+const ShareOnTwitter = styled.div`
+  height: 50px;
+  width: 50px;
+  svg {
+    fill: #1da1f2;
+  }
+`;
 
 const OverlaySideBar = styled.div`
   position: fixed;

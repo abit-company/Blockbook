@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactDOM from 'react-dom';
-import { IconThumbUp, IconHeart, IconEdit } from './UI';
+import { IconThumbUp, IconEdit } from './icons';
 
 const checkIfTextSelected = () => {
   const selection = window.getSelection();
