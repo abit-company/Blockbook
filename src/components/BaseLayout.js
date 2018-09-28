@@ -76,7 +76,10 @@ export default class BaseLayout extends React.Component {
     this.lastScrollPosition = newScrollPosition;
   };
   componentDidMount() {
+    console.log(this.props);
+    console.log('COMPONENT DID MOUNT');
     if (process.env.NODE_ENV === 'production') {
+      console.log('SET DOC SEARCH');
       try {
         window.docsearch({
           apiKey: 'c69eb7c785de370820ad099a5f64a3fa',
@@ -126,6 +129,8 @@ export default class BaseLayout extends React.Component {
   };
 
   render() {
+    console.log('RENDER BASE LAYOUT');
+    console.log(this.props.location);
     const currentPath = '/';
     const isHome = currentPath === '/';
 

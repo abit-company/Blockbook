@@ -33,7 +33,7 @@ const nextLink = currentPath => {
   }
   return null;
 };
-export default () => (
+const PageNavigationFooter = () => (
   <UIContext.Consumer>
     {({ currentPath }) => (
       <NavFooter>
@@ -59,3 +59,5 @@ const NavFooter = styled.div`
   border-top: 1px solid ${props => props.theme.grey};
   padding: 1rem 0;
 `;
+
+export default PageNavigationFooter;

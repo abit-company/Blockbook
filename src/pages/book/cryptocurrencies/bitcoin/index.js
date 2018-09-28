@@ -13,7 +13,6 @@ import {
 import PageTemplate from 'templates/PageTemplate';
 
 const Bitcoin = () => (
-  <PageTemplate>
     <Page>
       <ChapterTitle>Bitcoin</ChapterTitle>
       <Cit
@@ -99,7 +98,6 @@ const Bitcoin = () => (
         and it is currently testing the Lightning Network.
       </Paragraph>
     </Page>
-  </PageTemplate>
 );
 
 export default Bitcoin;

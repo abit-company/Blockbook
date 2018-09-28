@@ -73,38 +73,31 @@ export default class PageTemplate extends React.Component {
 
   render() {
     return (
-      <BaseLayout>
-        <UiContext.Consumer>
-          {({
-            isSideBarOpen,
-            isBigScreen,
-            currentPath,
-            updateLastLocation,
-          }) => (
-            <Page>
-              {updateLastLocation(currentPath)}
-              <SideBarWrapper
-                isSideBarOpen={isSideBarOpen}
-                isBigScreen={isBigScreen}
-                id="side-menu"
-                footerHeight={this.footerHeight}
-                blockSideMenu={this.state.blockSideMenu}
-              >
-                <SideBar />
-              </SideBarWrapper>
+      <UiContext.Consumer>
+        {({ isSideBarOpen, isBigScreen, currentPath, updateLastLocation }) => (
+          <Page>
+            {updateLastLocation(currentPath)}
+            <SideBarWrapper
+              isSideBarOpen={isSideBarOpen}
+              isBigScreen={isBigScreen}
+              id="side-menu"
+              footerHeight={this.footerHeight}
+              blockSideMenu={this.state.blockSideMenu}
+            >
+              <SideBar />
+            </SideBarWrapper>
 
-              <ContentWrapper>
-                <Content>
-                  {isSideBarOpen ? <OverlaySideBar /> : null}
-                  {this.props.children}
-                  <EditOnGithub currentPath={currentPath} />
-                  <PageNavigationFooter />
-                </Content>
-              </ContentWrapper>
-            </Page>
-          )}
-        </UiContext.Consumer>
-      </BaseLayout>
+            <ContentWrapper>
+              <Content>
+                {isSideBarOpen ? <OverlaySideBar /> : null}
+                {this.props.children}
+                <EditOnGithub currentPath={currentPath} />
+                <PageNavigationFooter currentPath={currentPath} />
+              </Content>
+            </ContentWrapper>
+          </Page>
+        )}
+      </UiContext.Consumer>
     );
   }
 }

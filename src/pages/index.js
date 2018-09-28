@@ -24,38 +24,38 @@ const sections = [
   },
 ];
 const HomePage = () => (
-  <BaseLayout>
-    <HomeContainer>
-      <Hero />
-      <HeroMessageContainer>
-        <HeroMessage>
-          <Title>Blockbook</Title>
-          <SubTitle>An Introduction to Blockchain technology</SubTitle>
-          {true ? (
-            <Button onClick={() => navigate('/book/introduction')}>
-              Start reading
-            </Button>
-          ) : (
-            <Button onClick={() => navigate()}>Continue reading</Button>
-          )}
-        </HeroMessage>
-      </HeroMessageContainer>
-      <About>
-        Everything you need to know to start exploring Blockchains and
-        cryptocurrencies. <br />
-        <span style={{ fontWeight: '400' }}>Free and open source.</span>
-      </About>
-      {sections.map((section, index) => (
-        <Section key={section.title} reverse={index % 2 === 1}>
-          <Bullet src={bullet} />
-          <SectionWrapper>
-            <SectionTitle>{section.title}</SectionTitle>
-            <SectionContent>{section.text}</SectionContent>
-          </SectionWrapper>
-        </Section>
-      ))}
-    </HomeContainer>
-  </BaseLayout>
+  // <BaseLayout>
+  <HomeContainer>
+    <Hero />
+    <HeroMessageContainer>
+      <HeroMessage>
+        <Title>Blockbook</Title>
+        <SubTitle>An Introduction to Blockchain technology</SubTitle>
+        {true ? (
+          <Button onClick={() => navigate('/book/introduction')}>
+            Start reading
+          </Button>
+        ) : (
+          <Button onClick={() => navigate()}>Continue reading</Button>
+        )}
+      </HeroMessage>
+    </HeroMessageContainer>
+    <About>
+      Everything you need to know to start exploring Blockchains and
+      cryptocurrencies. <br />
+      <span style={{ fontWeight: '400' }}>Free and open source.</span>
+    </About>
+    {sections.map((section, index) => (
+      <Section key={section.title} reverse={index % 2 === 1}>
+        <Bullet src={bullet} />
+        <SectionWrapper>
+          <SectionTitle>{section.title}</SectionTitle>
+          <SectionContent>{section.text}</SectionContent>
+        </SectionWrapper>
+      </Section>
+    ))}
+  </HomeContainer>
+  // </BaseLayout>
 );
 
 const About = styled.h3`
