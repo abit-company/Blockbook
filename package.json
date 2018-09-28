@@ -5,13 +5,13 @@
   "author": "gianluca@abit.company (@forgiangi)",
   "dependencies": {
     "gatsby": "2.0.10",
-    "gatsby-plugin-manifest": "2.0.2",
-    "gatsby-plugin-offline": "2.0.5",
     "gatsby-plugin-google-analytics": "1.0.31",
+    "gatsby-plugin-manifest": "2.0.2",
     "gatsby-plugin-nprogress": "1.0.14",
+    "gatsby-plugin-offline": "2.0.5",
+    "gatsby-plugin-react-helmet": "3.0.0",
     "gatsby-plugin-sharp": "2.0.5",
     "gatsby-plugin-sitemap": "2.0.1",
-    "gatsby-plugin-react-helmet": "3.0.0",
     "gatsby-plugin-styled-components": "3.0.0",
     "gatsby-source-filesystem": "2.0.1",
     "gatsby-transformer-sharp": "2.1.2",
@@ -36,6 +36,7 @@
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-react": "7.11.1",
     "gatsby-plugin-eslint": "2.0.1",
+    "gatsby-plugin-root-import": "^2.0.4",
     "prettier": "1.14.2"
   }
 }

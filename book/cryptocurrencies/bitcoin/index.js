@@ -10,10 +10,10 @@ import {
   Bold,
   Cit,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+export const Bitcoin = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Bitcoin</ChapterTitle>
       <Cit
@@ -99,5 +99,5 @@ export default () => (
         and it is currently testing the Lightning Network.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );

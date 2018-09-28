@@ -9,11 +9,10 @@ import {
   Italic,
   Bold,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
-import bankCommodity from './bank-commodity.png';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+export const MoneyAsATechnology = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Money as a technology</ChapterTitle>
       <Important>
@@ -132,7 +131,7 @@ export default () => (
         somewhere else.
       </Important>
       <ImageWrapper label="Commodity backed money">
-        {bankCommodity}
+        {/* {bankCommodity} */}
       </ImageWrapper>
       <h5>Fiat money</h5>
       <Paragraph>
@@ -159,5 +158,5 @@ export default () => (
         the world.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );

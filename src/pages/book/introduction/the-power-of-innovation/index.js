@@ -1,9 +1,9 @@
 import React from 'react';
 import { Paragraph, Page, ChapterTitle } from 'components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+export const ThePowerOfInnovation = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>The power of innovation</ChapterTitle>
       <Paragraph>
@@ -38,5 +38,5 @@ export default () => (
         embraced.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );

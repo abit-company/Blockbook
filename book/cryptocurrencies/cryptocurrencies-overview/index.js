@@ -9,11 +9,11 @@ import {
   Italic,
   Bold,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 import digitalCurrencies from './digital-currencies-crypto.png';
 
-export default () => (
-  <PageLayout>
+export const CryptocurrenciesOverview = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>Cryptocurrencies overview</ChapterTitle>
       <Paragraph>
@@ -197,5 +197,5 @@ export default () => (
         </ul>
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );

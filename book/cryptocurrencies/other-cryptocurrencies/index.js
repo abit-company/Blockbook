@@ -9,10 +9,10 @@ import {
   Italic,
   Bold,
 } from 'components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+export const OtherCryptocurrencies = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>
         Other relevant cryptocurrencies (for payments)
@@ -106,5 +106,5 @@ export default () => (
         no more blocks (see tangle in chapter 1).
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );

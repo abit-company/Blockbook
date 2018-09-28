@@ -39,9 +39,9 @@ const SearchBox = styled.input`
   &:focus {
     transition: border-color 0.3s ease;
     border: 1px solid ${props => props.theme.mainColor};
-    /* ${SearchIcon} {
+    & + svg {
       fill: ${props => props.theme.mainColor};
-    } */
+    }
   }
 `;
 

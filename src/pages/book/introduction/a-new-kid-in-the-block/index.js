@@ -1,9 +1,9 @@
 import React from 'react';
 import { Paragraph, Page, ChapterTitle } from 'components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+export const NewKidInTheBlock = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>A new kind in the block</ChapterTitle>
       <Paragraph>
@@ -25,5 +25,5 @@ export default () => (
         inefficiencies and radically transform business models.
       </Paragraph>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );

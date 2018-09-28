@@ -1,9 +1,9 @@
 import React from 'react';
 import { Paragraph, Page, Cit, Important, ChapterTitle } from 'components';
-import PageLayout from 'layouts/PageLayout';
+import PageTemplate from 'templates/PageTemplate';
 
-export default () => (
-  <PageLayout>
+export const TheTrustIssue = () => (
+  <PageTemplate>
     <Page>
       <ChapterTitle>The trust issue</ChapterTitle>
       <Cit
@@ -61,5 +61,5 @@ export default () => (
         opportunity to bring a new kind of trust into applications.
       </Important>
     </Page>
-  </PageLayout>
+  </PageTemplate>
 );

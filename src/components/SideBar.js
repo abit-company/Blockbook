@@ -19,7 +19,6 @@ class TreeView extends React.Component {
         <UiContext.Consumer>
           {({ closeSideBar }) => (
             <SideBarLink
-              exact
               to={node.url}
               onClick={closeSideBar}
               activeClassName="active"
@@ -34,8 +33,8 @@ class TreeView extends React.Component {
   }
 }
 
-export default () => (
-  <SideBar onClick={e => e.stopPropagation()}>
+const SideBar = () => (
+  <SideBarContainer onClick={e => e.stopPropagation()}>
     <SideBarTitle
       to="/"
       onClick={() => document.body.classList.remove('no-scroll')}
@@ -43,7 +42,7 @@ export default () => (
       Index
     </SideBarTitle>
     <Ul>{toc.map(node => <TreeView key={node.url} node={node} />)}</Ul>
-  </SideBar>
+  </SideBarContainer>
 );
 
 const SideBarLink = styled(Link)`
@@ -70,7 +69,7 @@ const Ul = styled.ul`
   /* border-left: 1px solid ${props => props.theme.baseTextColor}; */
 `;
 
-const SideBar = styled.div`
+const SideBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 0;
@@ -78,3 +77,5 @@ const SideBar = styled.div`
   font-size: 15px;
   padding-right: 1rem;
 `;
+
+export default SideBar;

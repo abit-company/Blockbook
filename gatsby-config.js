@@ -18,6 +18,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        src: path.join(__dirname, 'src'),
+        pages: path.join(__dirname, 'src/pages'),
+        templates: path.join(__dirname, 'src/templates'),
+        styles: path.join(__dirname, 'src/styles'),
+        components: path.join(__dirname, 'src/components'),
+      },
+    },
+    {
       resolve: 'gatsby-plugin-eslint',
       options: {
         test: /\.js$|\.jsx$/,
