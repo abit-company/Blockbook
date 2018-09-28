@@ -32,6 +32,11 @@ const IntroductionToBlockchainTechnology = () => (
       it is fundamental to have at least a basic grasp of how it works under the
       hood.
     </Paragraph>
+    <Paragraph>
+      In this chapter we will guide you throught the key concepts of the
+      Blockchain technology, exploring the most important details that allow
+      this technology to work.
+    </Paragraph>
   </Page>
 );
 
