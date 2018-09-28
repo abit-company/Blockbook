@@ -6,22 +6,20 @@ const NewKidInTheBlock = () => (
   <Page>
     <ChapterTitle>A new kind in the block</ChapterTitle>
     <Paragraph>
-      During the last few years, media have periodically reported news about
-      Bitcoin. Sometimes it was about its incredible raise in price, sometimes
-      about its incredible drop in price and sometimes about how Bitcoin was
-      allegedly used by the criminals all over the world. Lots of people labeled
-      Bitcoin as a ponzi scheme, other compared Bitcoin to the tulips bubble of
-      1637. Meanwhile, someone else started digging deeper, trying to understand
-      how to make it possible for people all over the world to transfer money
-      without a bank. They found a system that was open, public,
-      censorship-resistant, secure and where innovation could be developed
-      without asking any permission: the Blockchain technology.
+      More and more often in recent years we have heard the media mention the
+      term Bitcoin. Sometimes for the incredible fluctuations of value that have
+      led to the comparison with the tulip bubble of 1637, others for its use in
+      criminal activities (for example as a method of payment in ransomware). In
+      the meantime, some people have begun to deepen this phenomenon, trying to
+      understand how it was possible for people all over the world to transfer
+      money without going through a financial institution. What they found was
+      an open, public and secure system, where it was possible to innovate
+      without asking permission from any institution: the Blockchain.
     </Paragraph>
     <Paragraph>
-      The Blockchain technology is becoming one of the top strategic priorities
-      of the most influential companies and business leaders worldwide, with the
-      promise of reducing costs, enhance trust, minimise inefficiencies and
-      radically transform business models.
+      This technology is fast becoming a strategic priority for many companies,
+      with the promise of reducing costs and inefficiencies, radically
+      transforming the business models we know today.
     </Paragraph>
   </Page>
 );
