@@ -3,10 +3,9 @@ import styled, { keyframes, css } from 'styled-components';
 import {
   SideBar,
   PageNavigationFooter,
-  // Highlightable,
   Link,
   IconGithub,
-  IconTwitter,
+  ShareIcons,
 } from '../components';
 import UiContext from '../components/UiContext';
 
@@ -92,9 +91,7 @@ export default class PageTemplate extends React.Component {
                 {this.props.children}
                 <PageFooterContainer>
                   <EditOnGithub currentPath={this.props.location.pathname} />
-                  <ShareOnTwitter>
-                    <IconTwitter />
-                  </ShareOnTwitter>
+                  <ShareIcons />
                 </PageFooterContainer>
                 <PageNavigationFooter
                   currentPath={this.props.location.pathname}
@@ -111,13 +108,6 @@ export default class PageTemplate extends React.Component {
 const PageFooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-const ShareOnTwitter = styled.div`
-  height: 50px;
-  width: 50px;
-  svg {
-    fill: #1da1f2;
-  }
 `;
 
 const OverlaySideBar = styled.div`
