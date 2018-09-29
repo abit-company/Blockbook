@@ -67,6 +67,7 @@ export default class PageTemplate extends React.Component {
     window.addEventListener('scroll', this.manageSideBarScroll, true);
   }
   componentWillUnmount() {
+    console.log('PAGE TEMPLATE WILL UNMOUNT');
     window.removeEventListener('scroll', this.manageSideBarScroll, true);
   }
 

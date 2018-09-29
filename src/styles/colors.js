@@ -13,6 +13,7 @@ const lightTheme = {
   baseTextColor: '#2c3e50',
   inverseTextColor: '#eee',
   panelBackgroundColor: '#fafafa',
+  popUpColor: '#2c3e50',
 };
 
 const darkTheme = {
@@ -21,6 +22,7 @@ const darkTheme = {
   panelBackgroundColor: '#616161',
   inverseTextColor: '#2c3e50',
   lightColor: '#eee',
+  popUpColor: '#eee',
 };
 
 const lightColors = { ...baseColor, ...lightTheme };

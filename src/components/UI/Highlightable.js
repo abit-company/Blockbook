@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactDOM from 'react-dom';
-import { IconThumbUp, IconEdit } from './icons';
+import ShareIcons from '../ShareIcons';
 
 const checkIfTextSelected = () => {
   const selection = window.getSelection();
@@ -20,15 +20,13 @@ const PopUp = ({ top, left }) => (
     <ArrowDown>
       <polygon points="0,0 10,10 20,0" fill="currentColor" />
     </ArrowDown>
-    <IconWrapper>
-      <IconThumbUp />
+    <ShareIcons popup />
+    {/* <IconWrapper twitter>
+      <IconTwitter />
     </IconWrapper>
-    {/* <IconWrapper>
-      <IconHeart />
+    <IconWrapper linkedin>
+      <IconLinkedin />
     </IconWrapper> */}
-    <IconWrapper>
-      <IconEdit />
-    </IconWrapper>
   </PopUpContainer>
 );
 
@@ -60,7 +58,6 @@ export default class Highlightable extends React.Component {
   }
   computePopUpBox = () => {
     const selection = window.getSelection();
-    // console.log(selection);
     if (!checkIfTextSelected()) {
       this.clearSelection();
       return;
@@ -68,16 +65,16 @@ export default class Highlightable extends React.Component {
     this.setState({
       selectedText: selection.toString(),
     });
-    const el = ReactDOM.findDOMNode(this.refs.highlightableArea);
+    const el = ReactDOM.findDOMNode(this.highlightableArea);
     const highlightableAreaRect = el.getBoundingClientRect();
     const selectionRect = selection.getRangeAt(0).getBoundingClientRect();
     this.setState({
       popUpLeft:
         selectionRect.x -
         highlightableAreaRect.x -
-        90 +
+        75 +
         selectionRect.width / 2,
-      popUptop: selectionRect.y - highlightableAreaRect.y - 70,
+      popUptop: selectionRect.y - highlightableAreaRect.y - 60,
     });
   };
 
@@ -86,7 +83,9 @@ export default class Highlightable extends React.Component {
       <HighlightableWrapper
         onMouseUp={this.computePopUpBox}
         onMouseDown={this.clearSelection}
-        ref="highlightableArea"
+        ref={c => {
+          this.highlightableArea = c;
+        }}
       >
         {this.state.selectedText ? (
           <PopUp top={this.state.popUptop} left={this.state.popUpLeft} />
@@ -102,11 +101,14 @@ const HighlightableWrapper = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  margin: 0 5px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 50px;
+  width: 50px;
+  svg {
+    fill: ${props => props.theme.inverseTextColor};
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `;
 const ArrowDown = styled.svg`
   height: 20px;
@@ -121,10 +123,11 @@ const ArrowDown = styled.svg`
 
 const PopUpContainer = styled.div`
   padding: 0 10px;
+  min-width: 100px;
   z-index: 30;
-  height: 40px;
+  height: 50px;
   background-color: ${props => props.theme.popUpColor};
-  border-radius: 5px;
+  border-radius: 10px;
   position: absolute;
   display: flex;
   flex-direction: row;

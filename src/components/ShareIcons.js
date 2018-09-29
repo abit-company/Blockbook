@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-import { IconTwitter, IconLinkedin } from './UI';
+import styled, { css } from 'styled-components';
+import { IconTwitterHoverable, IconLinkedinHoverable } from './UI';
 
 const shareOnTwitter = () => {
   const url = window.location.href;
@@ -35,27 +35,33 @@ const shareOnLinkedin = () => {
   );
 };
 
-const ShareIcons = () => (
-  <ShareIconsContainer>
+const ShareIcons = props => (
+  <ShareIconsContainer {...props}>
     <ShareIcon onClick={shareOnTwitter}>
-      <IconTwitter />
+      <IconTwitterHoverable />
     </ShareIcon>
     <ShareIcon onClick={shareOnLinkedin}>
-      <IconLinkedin />
+      <IconLinkedinHoverable />
     </ShareIcon>
   </ShareIconsContainer>
 );
 
 const ShareIcon = styled.div`
-  height: 50px;
-  width: 50px;
-  &:hover {
-    cursor: pointer;
-  }
+  height: 20px;
+  width: 20px;
+  margin: 0 10px;
 `;
 
 const ShareIconsContainer = styled.div`
   display: flex;
+  align-items: center;
+  ${props =>
+    props.popup &&
+    css`
+      svg {
+        fill: ${props => props.theme.inverseTextColor};
+      }
+    `};
 `;
 
 export default ShareIcons;

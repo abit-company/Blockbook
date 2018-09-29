@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import React from 'react';
-// import Highlightable from './Highlightable';
+import Highlightable from './Highlightable';
 
 const ChapterTitle = ({ children }) => (
   <H2
@@ -50,10 +50,11 @@ const Page = styled.div`
   line-height: 1.7;
 `;
 
-const HighlightableParagraph = styled.p`
-  padding-bottom: 0.4rem;
-  margin: 0;
-`;
+const HighlightableParagraph = ({ children }) => (
+  <Highlightable>
+    <Paragraph>{children}</Paragraph>
+  </Highlightable>
+);
 
 const Paragraph = styled.p`
   padding-bottom: 0.4rem;
